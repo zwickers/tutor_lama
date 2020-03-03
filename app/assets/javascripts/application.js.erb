@@ -25,23 +25,34 @@ window.fbAsyncInit = function() {
     
   FB.AppEvents.logPageView();   
 
-  $("#sign_in").click(e){
+  $("#sign_in").click(function(e) {
     e.preventDefault();
     FB.getLoginStatus(function(response) {
-      if ("authResponse" in response) {
-        window.location = 'auth/facebook/callback';
+      if (response.status == "connected") {
+          $.get(
+          '/auth/facebook/callback',
+          { signed_request: response.authResponse.signedRequest },
+          function(json) {
+            console.log("received logged in response");
+          });
       }
     });
-  }
-  $("#sign_out").click(e){
+  });
+
+  $("#sign_out").click(function(e) {
+    console.log("entered");
     e.preventDefault();
     FB.getLoginStatus(function(response) {
-      if ("authResponse" in response) {
-        FB.logout();
+      console.log(response);
+      if (response.status == "connected") {
+        FB.logout(function(response) {
+            console.log("logged out!");
+        });
         return true;
       }
     });
-  } 
+  });
+
 };
 
 (function(d, s, id){
