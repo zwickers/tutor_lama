@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 	def create
 		user = User.from_omniauth(env["omniauth.auth"])
-		# user_id obviously needs to be persisted after it's created
+		# user id obviously needs to be persisted after it's created
 		session[:user_id] = user.id
 		redirect_to root_url
 	end

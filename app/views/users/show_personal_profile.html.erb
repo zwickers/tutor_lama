@@ -1,0 +1,10 @@
+<h1><strong><%= current_user.name %></strong></h1>
+<%= image_tag("#{current_user.image}", {:style => "width:75px;"}) %>
+
+<h2>Bio:</h2>
+<p><%= current_user.bio %> </p>
+<%= link_to "Edit your bio", "/users/#{current_user.id}/edit", method: "get" %>
+
+<h2>Posts:</h2>
+
+<h2>Comments:</h2>

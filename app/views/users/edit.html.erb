@@ -1,0 +1,8 @@
+<h2>Bio:</h2>
+<%= form_tag "/users/#{current_user.id}", :method => :put do %>
+
+<%= text_field :bio, 'text' %>
+
+<%= submit_tag 'Update Bio' %>
+
+<% end %>

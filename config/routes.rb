@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   # destroy session on signout
   match 'signout', to: 'sessions#destroy', as: 'signout', :via => [:delete]
   
+  get 'users/me' => 'users#show_personal_profile'
+
+  get 'users/:id' => 'users#show'
+
+  get 'users/:id/edit' => 'users#edit'
+
+  put 'users/:id' => 'users#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

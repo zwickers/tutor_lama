@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   def self.from_omniauth(auth)
-    puts auth
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -10,5 +9,10 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
+  end
+
+  def self.update_bio(id, bio_text)
+    user = User.find_by(id: id)
+    user.update(bio: bio_text)
   end
 end
