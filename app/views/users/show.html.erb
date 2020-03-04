@@ -1,0 +1,7 @@
+<h1><strong><%= @arb_user.name %></strong></h1>
+<%= image_tag("#{@arb_user.image}", {:style => "width:75px;"}) %>
+
+<h2>Bio:</h2>
+<p><%= @arb_user.bio %> </p>
+
+<%= link_to 'Back to main page', root_path %>

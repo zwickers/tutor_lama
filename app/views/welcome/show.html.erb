@@ -1,1 +1,31 @@
-WELCOME TO TUTOR LAMA
+WELCOME TO TUTOR LAMA 🦙
+
+<% if current_user %>
+  <table>
+    <tr>
+      <th>Tutor Searches</th>
+    </tr>
+
+    <% @tutor_searches.each do |post| %>
+      <tr>
+        <td><%= link_to "#{post.title}", tutor_search_path(post) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <table>
+    <tr>
+      <th>Tutee Searches</th>
+    </tr>
+
+    <% @tutee_searches.each do |post| %>
+      <tr>
+        <td><%= link_to "#{post.title}", tutee_search_path(post) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Submit New Tutor Search', new_tutor_search_path %>
+  <%= link_to 'Submit New Tutee Search', new_tutee_search_path %>
+
+<% end %>

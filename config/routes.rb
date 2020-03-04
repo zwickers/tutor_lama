@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   put 'users/:id' => 'users#update'
 
+  resources :tutor_searches
+  resources :tutee_searches
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -60,7 +64,7 @@ Rails.application.routes.draw do
   #   concern :toggleable do
   #     post 'toggle'
   #   end
-  #   resources :posts, concerns: :toggleable
+  #   resources :tutor_searches, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
