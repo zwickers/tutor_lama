@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# bootstrap styling
+gem 'bootstrap', '~> 4.4.1'
 
 # needed for Facebook authentication
 gem 'omniauth-facebook'
