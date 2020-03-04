@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+	has_many :tutor_searches
+	has_many :tutee_searches
+
 	# show users own profile
 	def show_personal_profile
 		unless session[:user_id]
