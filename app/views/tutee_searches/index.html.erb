@@ -1,0 +1,20 @@
+<h1>Active Tutee Searches</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Details</th>
+    <th></th>
+  </tr>
+
+  <% @tutee_searches.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.text %></td>
+      <td><%= link_to 'Show', tutee_search_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Submit New Tutee Search', new_tutee_search_path %>
+<%= link_to 'Back to Main Page', root_path %>

@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200302215959) do
+ActiveRecord::Schema.define(version: 20200304060834) do
+
+  create_table "tutee_searches", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tutee_searches", ["user_id"], name: "index_tutee_searches_on_user_id"
+
+  create_table "tutor_searches", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tutor_searches", ["user_id"], name: "index_tutor_searches_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -19,10 +39,10 @@ ActiveRecord::Schema.define(version: 20200302215959) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "image"
-    t.string   "bio"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "bio"
   end
 
 end
