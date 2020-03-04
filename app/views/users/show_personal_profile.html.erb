@@ -1,35 +1,53 @@
-<h1><strong><%= current_user.name %></strong></h1>
-<%= image_tag("#{current_user.image}", {:style => "width:75px;"}) %>
+<br />
 
-<h2>Bio:</h2>
-<p><%= current_user.bio %> </p>
-<%= link_to "Edit your bio", "/users/#{current_user.id}/edit", method: "get" %>
+<h1 class="text-center"><strong><%= current_user.name %></strong></h1>
+<%= image_tag("#{current_user.image}", class: "rounded mx-auto d-block", style: "width: 220px; margin-top: 10px;") %>
+
+<br/>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Biography</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Tell potential tutors or pupils a little about yourself.</h6>
+        <p class="card-text"><%= current_user.bio %></p>
+        <%= link_to "Edit your bio", "/users/#{current_user.id}/edit", class: "card-link", method: "get" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
 
 <h2>Posts:</h2>
-<table>
-  <tr>
-    <th>My Tutor Searches</th>
-  </tr>
-
-  <% @my_tutor_searches.each do |post| %>
-    <tr>
-      <td><%= link_to "#{post.title}", tutor_search_path(post) %></td>
-    </tr>
-  <% end %>
-</table>
 
 <table>
-  <tr>
-    <th>My Tutee Searches</th>
-  </tr>
-
-  <% @my_tutee_searches.each do |post| %>
     <tr>
-      <td><%= link_to "#{post.title}", tutee_search_path(post) %></td>
+      <th>Tutor Searches</th>
     </tr>
-  <% end %>
-</table>
 
-<h2>Comments:</h2>
+    <% @my_tutor_searches.each do |post| %>
+      <tr>
+        <td><%= link_to "#{post.title}", tutor_search_path(post) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <table>
+    <tr>
+      <th>Tutee Searches</th>
+    </tr>
+
+    <% @my_tutee_searches.each do |post| %>
+      <tr>
+        <td><%= link_to "#{post.title}", tutee_search_path(post) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Submit New Tutor Search', new_tutor_search_path %>
+  <%= link_to 'Submit New Tutee Search', new_tutee_search_path %>
 
 <%= link_to 'Back to main page', root_path %>
+

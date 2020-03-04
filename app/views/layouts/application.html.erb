@@ -7,12 +7,41 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
-			<% if current_user %>
-				Signed in as <strong><%= link_to current_user.name, users_me_path %></strong>
-				<%= link_to "Sign out", "/signout", id: "sign_out", method: "delete" %>
-			<% end %>
-	</div>
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<%= link_to "ㄒㄩㄒㄖ尺 ㄥ卂爪卂", "/users/me", class: "navbar-brand", method: "get" %>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">				
+				</span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">@Columbia</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  	Launchpad
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">My tutors</a>
+							<a class="dropdown-item" href="#">My pupils</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Active posts</a>
+							<a class="dropdown-item" href="#">Pending posts</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+				<span class="nav-link" href="#"><%= link_to "Sign out", "/signout", id: "sign_out", class: "nav-link", method: "delete" %></span>
+				</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--view associated with whatever controller action gets triggered-->
 	<div class="container">
 		<%= yield %>
 	</div>
