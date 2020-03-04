@@ -1,4 +1,4 @@
-# Tutor Lama
+# Tutor Lama 🦙
 
 Tutor Lama is a web app for connecting tutors with tutees on university campuses.
 
