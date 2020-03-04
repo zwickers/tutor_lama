@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :posts
+  has_many :tutee_searches
+  has_many :tutor_searches
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
       user.provider = auth.provider
