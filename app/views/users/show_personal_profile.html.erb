@@ -29,6 +29,7 @@
 
     <% @my_tutor_searches.each do |post| %>
       <tr>
+        <td><%= User.find(post.user_id).name %></td>
         <td><%= link_to "#{post.title}", tutor_search_path(post) %></td>
       </tr>
     <% end %>
