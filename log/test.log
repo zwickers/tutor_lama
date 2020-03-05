@@ -696,3 +696,1133 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:35:36 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 527ms (Views: 520.5ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:35:37.419987"], ["updated_at", "2020-03-05 15:35:37.419987"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 29ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.5ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.5ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 2.1ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:35:37.474625"], ["updated_at", "2020-03-05 15:35:37.474625"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:35:37 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:38:42 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 435ms (Views: 428.3ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:38:43.404435"], ["updated_at", "2020-03-05 15:38:43.404435"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 31ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.4ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.5ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:38:43.454977"], ["updated_at", "2020-03-05 15:38:43.454977"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:38:43 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 496ms (Views: 489.3ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:44:20.711308"], ["updated_at", "2020-03-05 15:44:20.711308"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 33ms (ActiveRecord: 1.9ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.5ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.4ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 2.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:44:20.765702"], ["updated_at", "2020-03-05 15:44:20.765702"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:44:20 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:44 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 348ms (Views: 341.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:44:45.309023"], ["updated_at", "2020-03-05 15:44:45.309023"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 24ms (ActiveRecord: 1.2ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.0ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:44:45.377778"], ["updated_at", "2020-03-05 15:44:45.377778"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.1ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:44:45 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 327ms (Views: 320.0ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:45:02.819936"], ["updated_at", "2020-03-05 15:45:02.819936"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 17ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.0ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:45:02.873022"], ["updated_at", "2020-03-05 15:45:02.873022"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:45:02 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 341ms (Views: 333.5ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:45:37.879313"], ["updated_at", "2020-03-05 15:45:37.879313"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 27ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:45:37.976092"], ["updated_at", "2020-03-05 15:45:37.976092"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.1ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:45:37 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (2.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 359ms (Views: 348.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:45:54.681498"], ["updated_at", "2020-03-05 15:45:54.681498"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 30ms (ActiveRecord: 1.6ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:45:54.738625"], ["updated_at", "2020-03-05 15:45:54.738625"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.4ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.7ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+Started POST "/tutor_searches" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by TutorSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tutor_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:45:54.865855"], ["updated_at", "2020-03-05 15:45:54.865855"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tutor_searches/1
+Completed 302 Found in 46ms (ActiveRecord: 0.7ms)
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-03-05 10:45:54 -0500
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:46:22 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 354ms (Views: 345.7ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:46:23.113184"], ["updated_at", "2020-03-05 15:46:23.113184"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 22ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.0ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:46:23.167260"], ["updated_at", "2020-03-05 15:46:23.167260"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+Started POST "/tutor_searches" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by TutorSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tutor_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:46:23.246511"], ["updated_at", "2020-03-05 15:46:23.246511"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tutor_searches/1
+Completed 302 Found in 29ms (ActiveRecord: 0.4ms)
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-03-05 10:46:23 -0500
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (6.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 355ms (Views: 345.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:48:40.636827"], ["updated_at", "2020-03-05 15:48:40.636827"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:48:40.686786"], ["updated_at", "2020-03-05 15:48:40.686786"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:48:40 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 410ms (Views: 403.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:55:16.846460"], ["updated_at", "2020-03-05 15:55:16.846460"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 22ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.0ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:55:16.897817"], ["updated_at", "2020-03-05 15:55:16.897817"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+Started POST "/tutor_searches" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by TutorSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tutor_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:55:16.965357"], ["updated_at", "2020-03-05 15:55:16.965357"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tutor_searches/1
+Completed 302 Found in 27ms (ActiveRecord: 0.5ms)
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-03-05 10:55:16 -0500
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (3.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 319ms (Views: 311.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:56:23.662256"], ["updated_at", "2020-03-05 15:56:23.662256"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 20ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:56:23.715896"], ["updated_at", "2020-03-05 15:56:23.715896"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.1ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+Started POST "/tutor_searches" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by TutorSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tutor_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:56:23.803714"], ["updated_at", "2020-03-05 15:56:23.803714"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tutor_searches/1
+Completed 302 Found in 36ms (ActiveRecord: 0.6ms)
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-03-05 10:56:23 -0500
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (5.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:54 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 317ms (Views: 308.7ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:58:55.253208"], ["updated_at", "2020-03-05 15:58:55.253208"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 27ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:58:55.300265"], ["updated_at", "2020-03-05 15:58:55.300265"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.0ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+Started POST "/tutor_searches" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by TutorSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tutor_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:58:55.380203"], ["updated_at", "2020-03-05 15:58:55.380203"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tutor_searches/1
+Completed 302 Found in 30ms (ActiveRecord: 0.4ms)
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tutor_searches"
+  [1m[36m (6.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:58:55.414547"], ["updated_at", "2020-03-05 15:58:55.414547"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:58:55 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 353ms (Views: 344.7ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:59:28.825814"], ["updated_at", "2020-03-05 15:59:28.825814"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 21ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.0ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+(facebook) Authentication failure! invalid_credentials encountered.
+Started GET "/auth/failure?message=invalid_credentials&origin=http%3A%2F%2Fwww.example.com%2F&strategy=facebook" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:59:28.879389"], ["updated_at", "2020-03-05 15:59:28.879389"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+Started GET "/tutor_searches/new" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by TutorSearchesController#new as HTML
+  Rendered tutor_searches/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+Started POST "/tutor_searches" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by TutorSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tutor_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:59:28.956055"], ["updated_at", "2020-03-05 15:59:28.956055"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tutor_searches/1
+Completed 302 Found in 28ms (ActiveRecord: 0.4ms)
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.1ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tutor_searches"
+  [1m[36m (5.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "12345"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "oauth_token", "oauth_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "12345"], ["name", "facebookuser"], ["oauth_token", "shit"], ["oauth_expires_at", "2000-01-01 05:00:00.000000"], ["created_at", "2020-03-05 15:59:28.988632"], ["updated_at", "2020-03-05 15:59:28.988632"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Started GET "/tutee_searches/new" for 127.0.0.1 at 2020-03-05 10:59:28 -0500
+Processing by TuteeSearchesController#new as HTML
+  Rendered tutee_searches/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+Started POST "/tutee_searches" for 127.0.0.1 at 2020-03-05 10:59:29 -0500
+Processing by TuteeSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "commit"=>"Save changes"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameters: utf8, commit
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tutee_searches" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "LOOKING"], ["text", "Anybody looking?"], ["user_id", 1], ["created_at", "2020-03-05 15:59:29.041364"], ["updated_at", "2020-03-05 15:59:29.041364"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tutee_searches/1
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+Started GET "/tutee_searches/1" for 127.0.0.1 at 2020-03-05 10:59:29 -0500
+Processing by TuteeSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTuteeSearch Load (0.1ms)[0m  SELECT  "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tutee_searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tutee_searches"[0m
+  [1m[35m (1.1ms)[0m  rollback transaction

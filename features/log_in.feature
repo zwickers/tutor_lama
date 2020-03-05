@@ -5,7 +5,7 @@ Feature: log in via Facebook
 
 Scenario: authenticated through Facebook successfully
   Given I am on the home page
-  When I click sign in with facebook
+  When I click sign_in
   Then I should be on the main page
   And I should see Active Tutor Listings for @Columbia
   And I should see Active Pupil Listings for @Columbia
@@ -14,7 +14,7 @@ Scenario: authenticated through Facebook successfully
 @log_in_failure
 Scenario: authenticated through Facebook unsuccessfully
   Given I am on the home page
-  When I click sign in with facebook
+  When I click sign_in
   And I should not see Active Tutor Listings for @Columbia
   And I should not see Active Pupil Listings for @Columbia
   And 0 user should exist
