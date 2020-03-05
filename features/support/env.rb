@@ -53,6 +53,38 @@ end
 #   end
 #
 
+OmniAuth.config.test_mode = true
+
+Before do
+  OmniAuth.config.add_mock(:facebook, {
+      :uid => '12345',
+      :info => {
+          :name => 'facebookuser'
+      },
+      :credentials => {
+          :token => 'shit',
+          :expires_at => 946702800
+      }
+  })
+end
+
+Before('@log_in_failure') do
+  OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+end
+
+After('@log_in_failure') do
+  OmniAuth.config.add_mock(:facebook, {
+      :uid => '12345',
+      :info => {
+          :name => 'facebookuser'
+      },
+      :credentials => {
+          :token => 'shit',
+          :expires_at => 946702800
+      }
+  })
+end
+
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
