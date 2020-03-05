@@ -8,5 +8,17 @@
   <%= @tutor_search.text %>
 </p>
 
+<p>
+  <strong>Comments:</strong>
+  <% @tutor_search.comments.each do |comment| %>
+<strong><%= comment.author %></strong><br/>
+  <%= comment.text %><br/>
+
+  <% end %>
+</p>
+
+  <%= link_to "Add Comment", "/comments/new/tutor/#{params[:id]}", method: "get" %>
+  <br/>
+
 <%= link_to 'Back to Tutor Searches', tutor_searches_path %>
 <%= link_to 'Back to Main Page', root_path %>

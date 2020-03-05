@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
 	# get the form to edit a user's profile
 	def edit
-
+		
 	end
 
 	def update

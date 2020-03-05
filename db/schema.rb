@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200304060834) do
+ActiveRecord::Schema.define(version: 20200305222122) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "time"
+    t.integer  "tutor_search_id"
+    t.integer  "tutee_search_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "author"
+  end
 
   create_table "tutee_searches", force: :cascade do |t|
     t.string   "title"

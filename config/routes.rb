@@ -15,9 +15,13 @@ Rails.application.routes.draw do
 
   put 'users/:id' => 'users#update'
 
+
+  get 'comments/new/:post_type/:id' => 'comments#new_comment'
+  post 'comments/:post_type/:id' => 'comments#create_comment'
+
   resources :tutor_searches
   resources :tutee_searches
-
+  resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
