@@ -15,8 +15,8 @@
         
     <% end %>
     <small class="d-block text-right mt-3">
-          <a href="#">All updates</a>
-        </small>
+          <%= link_to 'All updates', tutor_searches_path, method: "get" %>
+    </small>
  
 
   <h4 class="pb-2 mb-0">Active Pupil Listings for @Columbia</h4>
@@ -31,9 +31,10 @@
             <%= post.title %>
           </p>
         </div>
-        
-
     <% end %>
+    <small class="d-block text-right mt-3">
+      <%= link_to 'All updates', tutee_searches_path, method: "get" %>
+    </small>
 <br/>
 
   <%= link_to 'Submit New Tutor Search', new_tutor_search_path %>
@@ -53,6 +54,7 @@
     </div>
   </div>
 <% end %>
+
 
 
 
