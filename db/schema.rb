@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20200305222122) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string   "text"
     t.datetime "time"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20200305222122) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "tutee_searches", ["user_id"], name: "index_tutee_searches_on_user_id"
+  add_index "tutee_searches", ["user_id"], name: "index_tutee_searches_on_user_id", using: :btree
 
   create_table "tutor_searches", force: :cascade do |t|
     t.string   "title"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20200305222122) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "tutor_searches", ["user_id"], name: "index_tutor_searches_on_user_id"
+  add_index "tutor_searches", ["user_id"], name: "index_tutor_searches_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -49,10 +52,12 @@ ActiveRecord::Schema.define(version: 20200305222122) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "image"
+    t.string   "bio"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "bio"
   end
 
+  add_foreign_key "tutee_searches", "users"
+  add_foreign_key "tutor_searches", "users"
 end
