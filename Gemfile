@@ -56,6 +56,7 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development do

@@ -3874,3 +3874,83 @@ Processing by UsersController#show_personal_profile as HTML
   [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."user_id" = $1[0m  [["user_id", 1]]
   Rendered users/show_personal_profile.html.erb within layouts/application (2.3ms)
 Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-06 16:01:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.5ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.3ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 456ms (Views: 401.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-06 16:01:16 -0500
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.1ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  Rendered welcome/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 90ms (Views: 88.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-06 16:01:29 -0500
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/me" for 127.0.0.1 at 2020-03-06 16:01:36 -0500
+Processing by UsersController#show_personal_profile as HTML
+  Parameters: {"authenticity_token"=>"xH9qdtSOUW8s4l/hy5WXtLiwVcjDxIasdgfvwng05xMs4y/8qYRk1FZ5WYAUBUj9qoujtdPKKn7rafpt19i2aA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.2ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."user_id" = $1  [["user_id", 1]]
+  [1m[36mTuteeSearch Load (0.1ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show_personal_profile.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 61ms (Views: 49.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2020-03-06 16:01:38 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dCaPYHSZhqRa/qNaan4sTaN33aYahfW8OZhT3eWmvgecusrqCZOzHyBlpTu17vMEsUwr2wqLWW6k9kZySkrvfA=="}
+Redirected to https://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-06 16:01:38 -0500
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 27ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-06 17:18:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 453ms (Views: 445.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-9279823f35d218f42b3ed6b360b46bc91fa5fc2b3f85304ad1133f580e1ed036.css?body=1" for 127.0.0.1 at 2020-03-06 17:18:35 -0500
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-03-06 17:18:35 -0500
+
+
+Started GET "/assets/bootstrap/util.self-f10a2d4eac0ee99fa400f029db49af1fd010c576cac4e650b85d1202d2c4f424.js?body=1" for 127.0.0.1 at 2020-03-06 17:18:35 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-5a65c217abd0ec02ab6153a25f079f7c39ffdae8854c8645ece90a9ba271d179.js?body=1" for 127.0.0.1 at 2020-03-06 17:18:35 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-a223ac0d7dfbd7366f542e625b31c27661ba469855c9280510dda88fd855dab7.js?body=1" for 127.0.0.1 at 2020-03-06 17:18:35 -0500
+
+
+Started GET "/assets/application.self-fb608d1530523a39a125ca5f3d372a7f50e61c9e53f5289004d3e3949e890120.js?body=1" for 127.0.0.1 at 2020-03-06 17:18:35 -0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-06 17:18:37 -0500
+(facebook) Request phase initiated.

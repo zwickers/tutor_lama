@@ -9,7 +9,7 @@ Scenario: Post a tutor search
   When I click Submit New Tutor Search
   And I fill in LOOKING for title
   And I fill in Anybody looking? for text
-  And I click button commit
+  And I click button Save changes
   Then I should be on newly created tutor search page
   And I should see LOOKING
   And I should see Anybody looking?
@@ -22,7 +22,7 @@ Scenario: Post a tutee search
   When I click Submit New Pupil Search
   And I fill in LOOKING for title
   And I fill in Anybody looking? for text
-  And I click button commit
+  And I click button Save changes
   Then I should be on newly created tutee search page
   And I should see LOOKING
   And I should see Anybody looking?
