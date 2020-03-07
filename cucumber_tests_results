@@ -1,0 +1,85 @@
+Using the default profile...
+Feature: Comment on a Search Post
+  As a Tutorlama user
+  So that I can inquire about someone’s post
+  I want to be able to add a comment to a tutor/pupil search
+
+  Scenario: leaving a comment on a tutor search # features/comment.feature:6
+    Given There exists a Tutor Search           # features/step_definitions/steps.rb:63
+    And I am logged in                          # features/step_definitions/steps.rb:50
+    And I am on the Active Tutor Searches page  # features/step_definitions/steps.rb:1
+    When I click Show                           # features/step_definitions/steps.rb:11
+tutor
+
+    And I click Add Comment                     # features/step_definitions/steps.rb:11
+    And I fill in Great! for comment_text[text] # features/step_definitions/steps.rb:58
+    And I click button Submit Comment           # features/step_definitions/steps.rb:11
+    Then I should be on tutor search post       # features/step_definitions/steps.rb:19
+    And I should see Great!                     # features/step_definitions/steps.rb:30
+
+  Scenario: leaving a comment on a pupil search                    # features/comment.feature:17
+    Given There exists a Pupil Search                              # features/step_definitions/steps.rb:63
+    And I am logged in                                             # features/step_definitions/steps.rb:50
+    And I am on the Active Pupil Searches page                     # features/step_definitions/steps.rb:1
+    When I click Show                                              # features/step_definitions/steps.rb:11
+tutee
+
+    And I click Add Comment                                        # features/step_definitions/steps.rb:11
+    And I fill in what time can you make it for comment_text[text] # features/step_definitions/steps.rb:58
+    And I click button Submit Comment                              # features/step_definitions/steps.rb:11
+    Then I should be on tutee search post                          # features/step_definitions/steps.rb:19
+    And I should see what time can you make it                     # features/step_definitions/steps.rb:30
+
+Feature: log in via Facebook
+  As a Columbia University student
+  So that I could easily start using tutorlama without much hassle
+  I want to be able to log in using my Facebook account
+
+  Scenario: authenticated through Facebook successfully  # features/log_in.feature:6
+    Given I am on the home page                          # features/step_definitions/steps.rb:1
+    When I click sign_in                                 # features/step_definitions/steps.rb:11
+    Then I should be on the main page                    # features/step_definitions/steps.rb:19
+    And I should see Active Tutor Listings for @Columbia # features/step_definitions/steps.rb:30
+    And I should see Active Pupil Listings for @Columbia # features/step_definitions/steps.rb:30
+    And 1 user should exist                              # features/step_definitions/steps.rb:38
+
+  @log_in_failure
+  Scenario: authenticated through Facebook unsuccessfully    # features/log_in.feature:15
+    Given I am on the home page                              # features/step_definitions/steps.rb:1
+    When I click sign_in                                     # features/step_definitions/steps.rb:11
+    And I should not see Active Tutor Listings for @Columbia # features/step_definitions/steps.rb:30
+    And I should not see Active Pupil Listings for @Columbia # features/step_definitions/steps.rb:30
+    And 0 user should exist                                  # features/step_definitions/steps.rb:38
+
+Feature: Post Tutor Searches and Tutee Searches
+  As a tutor or a tutee,
+  So that I can find the tutor/tutee I am looking for
+  I want to be able to create a post to search for tutors or tutees
+
+  Scenario: Post a tutor search                         # features/tutor_search.feature:6
+    Given I am on the home page                         # features/step_definitions/steps.rb:1
+    And I am logged in                                  # features/step_definitions/steps.rb:50
+    When I click Submit New Tutor Search                # features/step_definitions/steps.rb:11
+    And I fill in LOOKING for title                     # features/step_definitions/steps.rb:58
+    And I fill in Anybody looking? for text             # features/step_definitions/steps.rb:58
+    And I click button Save changes                     # features/step_definitions/steps.rb:11
+    Then I should be on newly created tutor search page # features/step_definitions/steps.rb:19
+    And I should see LOOKING                            # features/step_definitions/steps.rb:30
+    And I should see Anybody looking?                   # features/step_definitions/steps.rb:30
+    And 1 tutor search should exist                     # features/step_definitions/steps.rb:46
+
+  Scenario: Post a tutee search                         # features/tutor_search.feature:19
+    Given I am on the home page                         # features/step_definitions/steps.rb:1
+    And I am logged in                                  # features/step_definitions/steps.rb:50
+    When I click Submit New Pupil Search                # features/step_definitions/steps.rb:11
+    And I fill in LOOKING for title                     # features/step_definitions/steps.rb:58
+    And I fill in Anybody looking? for text             # features/step_definitions/steps.rb:58
+    And I click button Save changes                     # features/step_definitions/steps.rb:11
+    Then I should be on newly created tutee search page # features/step_definitions/steps.rb:19
+    And I should see LOOKING                            # features/step_definitions/steps.rb:30
+    And I should see Anybody looking?                   # features/step_definitions/steps.rb:30
+    And 1 tutee search should exist                     # features/step_definitions/steps.rb:42
+
+6 scenarios (6 passed)
+49 steps (49 passed)
+0m0.870s

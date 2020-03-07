@@ -3954,3 +3954,14 @@ Started GET "/assets/application.self-fb608d1530523a39a125ca5f3d372a7f50e61c9e53
 
 Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-06 17:18:37 -0500
 (facebook) Request phase initiated.
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-06 18:11:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 421ms (Views: 414.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-03-06 18:11:06 -0500
+(facebook) Request phase initiated.
