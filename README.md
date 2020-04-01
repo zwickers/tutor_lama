@@ -1,6 +1,9 @@
 # Tutor Lama 🦙
 
 Tutor Lama is a web app for connecting tutors with tutees on university campuses.
+Justin Zwich - jaz2130
+Kevin Qian - xq2194
+Phivian Phun - pp2680
 
 ## Installation and Setup
 
@@ -25,10 +28,23 @@ thin start --ssl --ssl-key-file localhost.key --ssl-cert-file localhost.crt
 * Ruby v2.6.3
 * Rails v4.2.10
 
-## Usage
+## Databases
 
-TODO
+Development and Production are using postgreSQL.
+Testing is using SQLite3.
 
-## Testing suite
+## User Stories and Testing suite
 
-TODO
+Three basic features with multiple scenarios are defined under /features.
+See files under folder for user stories and cucumber tests.
+
+See cucumber_tests_results-1.png and cucumber_tests_results-2.png for the visual output.
+See cucumber_tests_results for the actual text file.
+
+## Github link
+
+https://github.com/zwickers/tutor_lama/tree/postgre
+
+## Heroku Deploy URL
+
+https://pacific-ocean-83192.herokuapp.com
