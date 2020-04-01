@@ -1,3 +1,5 @@
+<%= javascript_include_tag "tooltip" %>
+
 <div class="card" style="margin-top:15px;">
   <div class="card-body">
     <h1 class="card-title"><%= @tutee_search.title %></h1>
@@ -22,7 +24,11 @@
         </div>
       </div>
     <% end %>
-    <%= link_to "Add Comment", "/comments/new/tutee/#{params[:id]}", method: "get", class: "card-link" %>
+    <%= button_to "Add Comment", "/comments/new/tutee/#{params[:id]}", method: "get", class: "card-link", title:
+    'Please be kind!', 'data-toggle' => 'tooltip', 'data-placement' => 'top'  %>
   </div>
 
 </div>
+
+<script>
+</script>
