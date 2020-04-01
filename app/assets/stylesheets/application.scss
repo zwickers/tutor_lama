@@ -13,6 +13,23 @@
 
 @import "bootstrap";
 
+body {
+	background-color: #f5f5f5;
+}
+
 #user_nav {
 	float: right;
+}
+
+.post_title_individual {
+	margin-top:20px;
+}
+
+.below_post_title_individual {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.tutee_search_text {
+	
 }

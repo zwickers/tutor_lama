@@ -1,24 +1,26 @@
-<p>
-  <strong>Title:</strong>
-  <%= @tutor_search.title %>
-</p>
+<div class="card" style="margin-top:15px;">
+  <div class="card-body">
+    <h1 class="card-title"><%= @tutor_search.title %></h1>
+    <h6 class="card-subtitle mb-2 text-muted">Posted by <%= link_to User.find(@tutor_search.user_id).name, "/users/" + @tutor_search.user_id.to_s %> on <strong><%= @tutor_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
+    <p class="card-text"><%= @tutor_search.text %></p>
+    <%= link_to 'Back to Tutor Listings', tutor_searches_path, class: "card-link" %>
+    <a href="#" class="card-link">Bid on this pupil...</a> <!-- TODO: make this get a form for request -->
+  </div>
+</div>
 
-<p>
-  <strong>Detail:</strong>
-  <%= @tutor_search.text %>
-</p>
+<div class="card" style="margin-top:15px;margin-bottom:15px;">
+  <div class="card-body">
+    <h4 class="card-title">Comments</h4>
+    <h6 class="card-subtitle mb-2 text-muted"> haggle haggle haggle 👌🏽</h6>
+    <% @tutor_search.comments.each do |comment| %>
+      <div class="card" style="margin-top:15px;margin-bottom:15px;">
+        <div style="padding-top:10px;padding-left:10px;">
+        <h6 class="card-subtitle mb-2 text-muted"><strong><%= comment.author %></strong> on <%= comment.created_at.to_formatted_s(:long_ordinal) %></h6>
+        <%= comment.text %><br/>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "Add Comment", "/comments/new/tutor/#{params[:id]}", method: "get", class: "card-link" %>
+  </div>
 
-<p>
-  <strong>Comments:</strong>
-  <% @tutor_search.comments.each do |comment| %>
-<strong><%= comment.author %></strong><br/>
-  <%= comment.text %><br/>
-
-  <% end %>
-</p>
-
-  <%= link_to "Add Comment", "/comments/new/tutor/#{params[:id]}", method: "get" %>
-  <br/>
-
-<%= link_to 'Back to Tutor Searches', tutor_searches_path %>
-<%= link_to 'Back to Main Page', root_path %>
+</div>
