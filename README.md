@@ -1,6 +1,6 @@
 # Tutor Lama 🦙
 
-Tutor Lama is a web app for connecting tutors with tutees on university campuses.
+Tutor Lama is a web app for connecting tutors with students who go to the same university.
 
 ## Installation and Setup
 
