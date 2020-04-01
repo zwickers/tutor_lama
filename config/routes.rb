@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :numbers
+  resources :subjects
   # create a session when a user authenticates via facebook
   match 'auth/:provider/callback', to: 'sessions#create', :via => [:get]
   # redirect to homepage on authentication failure
@@ -22,6 +24,10 @@ Rails.application.routes.draw do
   resources :tutor_searches
   resources :tutee_searches
   resources :comments
+
+  resources :subjects do
+    resources :numbers
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
