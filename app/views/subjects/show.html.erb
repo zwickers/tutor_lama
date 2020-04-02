@@ -1,0 +1,7 @@
+<% if current_user %>
+  <% @numbers.each do |number| %>
+    <%= link_to subject_number_path(id: number.id, subject_id:@subject.id) do %>
+      <% number.name %>
+    <% end %>
+  <% end %>
+<% end %>

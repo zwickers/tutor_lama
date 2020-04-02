@@ -1,4 +1,7 @@
 <h1>New Post</h1>
+Submitting Tutor Search for
+<%= @number.subject.name %>
+<%= @number.name %>
 
 <%= form_tag @tutor_search, local: true do %>
   <% if @tutor_search.errors.any? %>
@@ -24,6 +27,8 @@
     <%= label_tag :text %><br>
     <%= text_field_tag :text %>
   </p>
+
+  <%= hidden_field_tag :number_id, @number.id %>
 
   <p>
     <%= submit_tag %>

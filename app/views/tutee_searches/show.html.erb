@@ -3,7 +3,7 @@
 <div class="card" style="margin-top:15px;">
   <div class="card-body">
     <h1 class="card-title"><%= @tutee_search.title %></h1>
-    <h6 class="card-subtitle mb-2 text-muted">Posted by <%= link_to User.find(@tutee_search.user_id).name, "/users/" + @tutee_search.user_id.to_s %> on <strong><%= @tutee_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
+    <h6 class="card-subtitle mb-2 text-muted">For [<%= @tutee_search.number.subject.name %><%= @tutee_search.number.name %>], Posted by <%= link_to User.find(@tutee_search.user_id).name, "/users/" + @tutee_search.user_id.to_s %> on <strong><%= @tutee_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
     <p class="card-text"><%= @tutee_search.text %></p>
     <%= link_to 'Back to Pupil Listings', tutee_searches_path, class: "card-link" %>
     <a href="#" class="card-link">Bid on this tutor...</a> <!-- TODO: make this get a form for request -->
@@ -29,6 +29,3 @@
   </div>
 
 </div>
-
-<script>
-</script>

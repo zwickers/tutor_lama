@@ -1,0 +1,21 @@
+<% if current_user %>
+  <% @subjects.each do |subject| %>
+    <%= link_to subject_numbers_path(subject) do %>
+      <%= subject.name %>
+    <% end %>
+    <br/>
+  <% end %>
+  <br/>
+  <%= form_tag @subject, local: true do %>
+    <p>
+      <%= label_tag 'Didn\'t find what you\'re looking for?' %><br>
+      <%= label_tag 'Create a new subject here.' %><br>
+
+      <%= text_field_tag :name %>
+    </p>
+
+    <p>
+      <%= submit_tag :Submit %>
+    </p>
+  <% end %>
+<% end %>

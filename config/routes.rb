@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :numbers
-  resources :subjects
   # create a session when a user authenticates via facebook
   match 'auth/:provider/callback', to: 'sessions#create', :via => [:get]
   # redirect to homepage on authentication failure

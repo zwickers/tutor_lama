@@ -5,6 +5,7 @@ class TutorSearchesController < ApplicationController
 
   def new
     @tutor_search = TutorSearch.new
+    @number = Number.find(params[:number_id])
   end
 
   def edit
@@ -13,6 +14,7 @@ class TutorSearchesController < ApplicationController
 
   def create
     @tutor_search = current_user.tutor_searches.create(tutor_search_params)
+    @tutee_search.number_id = params[:number_id]
     if @tutor_search.save
       redirect_to @tutor_search
     else

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200305222122) do
+ActiveRecord::Schema.define(version: 20200401221641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,31 @@ ActiveRecord::Schema.define(version: 20200305222122) do
     t.string   "author"
   end
 
+  create_table "numbers", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "numbers", ["subject_id"], name: "index_numbers_on_subject_id", using: :btree
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tutee_searches", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "number_id"
   end
 
+  add_index "tutee_searches", ["number_id"], name: "index_tutee_searches_on_number_id", using: :btree
   add_index "tutee_searches", ["user_id"], name: "index_tutee_searches_on_user_id", using: :btree
 
   create_table "tutor_searches", force: :cascade do |t|
@@ -42,8 +59,10 @@ ActiveRecord::Schema.define(version: 20200305222122) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "number_id"
   end
 
+  add_index "tutor_searches", ["number_id"], name: "index_tutor_searches_on_number_id", using: :btree
   add_index "tutor_searches", ["user_id"], name: "index_tutor_searches_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +77,9 @@ ActiveRecord::Schema.define(version: 20200305222122) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "numbers", "subjects"
+  add_foreign_key "tutee_searches", "numbers"
   add_foreign_key "tutee_searches", "users"
+  add_foreign_key "tutor_searches", "numbers"
   add_foreign_key "tutor_searches", "users"
 end

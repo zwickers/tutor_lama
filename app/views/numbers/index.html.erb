@@ -1,0 +1,23 @@
+<% if current_user %>
+  <p>
+    <%= @subject.name %>
+  </p>
+
+  <% @numbers.each do |number| %>
+    <%= link_to subject_number_path(id: number.id, subject_id:@subject.id) do %>
+      <%= number.name %>
+    <% end %>
+  <% end %>
+
+  <%= form_tag @number, local: true do %>
+    <p>
+      <%= label_tag 'Didn\'t find what you\'re looking for?' %><br>
+      <%= label_tag 'Create a new course number here' %><br>
+      <%= text_field_tag :name %>
+    </p>
+
+    <p>
+      <%= submit_tag 'Submit' %>
+    </p>
+  <% end %>
+<% end %>

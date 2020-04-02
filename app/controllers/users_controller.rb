@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	end
 
 	# show profile of arbitrary user
-	def show 
+	def show
 		@arb_user = User.find(params[:id])
 	end
 
