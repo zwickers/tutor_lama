@@ -1,0 +1,241 @@
+Using the default profile...
+Feature: Comment on a Search Post
+  As a Tutorlama user
+  So that I can inquire about someone’s post
+  I want to be able to add a comment to a tutor/pupil search
+
+  Scenario: leaving a comment on a tutor search # features/comment.feature:6
+    Given I am on the home page                 # features/step_definitions/steps.rb:1
+    And I am logged in                          # features/step_definitions/steps.rb:54
+    And I am on the home page                   # features/step_definitions/steps.rb:1
+    And I click SUBJECTS                        # features/step_definitions/steps.rb:15
+    And I fill in COMS for name                 # features/step_definitions/steps.rb:62
+COMS
+COMS
+xxxxx
+    And I click button Submit                   # features/step_definitions/steps.rb:15
+    And I should see COMS                       # features/step_definitions/steps.rb:34
+    And I fill in 4118 for name                 # features/step_definitions/steps.rb:62
+    And I click button Submit                   # features/step_definitions/steps.rb:15
+    And I click button Submit New Tutor Search  # features/step_definitions/steps.rb:15
+    And I fill in LOOKING for title             # features/step_definitions/steps.rb:62
+    And I fill in Anybody looking? for text     # features/step_definitions/steps.rb:62
+    And I click button Save changes             # features/step_definitions/steps.rb:15
+tutor
+
+    When I click button Add Comment             # features/step_definitions/steps.rb:15
+    And I fill in Great! for comment_text[text] # features/step_definitions/steps.rb:62
+    And I click button Submit Comment           # features/step_definitions/steps.rb:15
+    Then I should be on tutor search post       # features/step_definitions/steps.rb:23
+    And I should see Great!                     # features/step_definitions/steps.rb:34
+
+  Scenario: leaving a comment on a pupil search                    # features/comment.feature:26
+    Given I am on the home page                                    # features/step_definitions/steps.rb:1
+    And I am logged in                                             # features/step_definitions/steps.rb:54
+    And I am on the home page                                      # features/step_definitions/steps.rb:1
+    And I click SUBJECTS                                           # features/step_definitions/steps.rb:15
+    And I fill in COMS for name                                    # features/step_definitions/steps.rb:62
+COMS
+COMS
+xxxxx
+    And I click button Submit                                      # features/step_definitions/steps.rb:15
+    And I should see COMS                                          # features/step_definitions/steps.rb:34
+    And I fill in 4118 for name                                    # features/step_definitions/steps.rb:62
+    And I click button Submit                                      # features/step_definitions/steps.rb:15
+{"number_id"=>"1", "controller"=>"tutee_searches", "action"=>"new"}
+    And I click button Submit New Pupil Search                     # features/step_definitions/steps.rb:15
+    And I fill in LOOKING for title                                # features/step_definitions/steps.rb:62
+    And I fill in Anybody looking? for text                        # features/step_definitions/steps.rb:62
+{"utf8"=>"✓", "title"=>"LOOKING", "text"=>"Anybody looking?", "number_id"=>"1", "commit"=>"Save changes", "controller"=>"tutee_searches", "action"=>"create"}
+1
+    And I click button Save changes                                # features/step_definitions/steps.rb:15
+tutee
+
+    When I click button Add Comment                                # features/step_definitions/steps.rb:15
+    And I fill in what time can you make it for comment_text[text] # features/step_definitions/steps.rb:62
+1
+    And I click button Submit Comment                              # features/step_definitions/steps.rb:15
+    Then I should be on tutee search post                          # features/step_definitions/steps.rb:23
+    And I should see what time can you make it                     # features/step_definitions/steps.rb:34
+
+Feature: Create course page and view course's searches
+  As a Tutorlama user
+  So that I can post searches associated with a specific course
+  I want to be able to use create
+
+  Scenario: creating a subject  # features/course.feature:6
+    Given I am on the home page # features/step_definitions/steps.rb:1
+    And I am logged in          # features/step_definitions/steps.rb:54
+    And I am on the home page   # features/step_definitions/steps.rb:1
+    When I click SUBJECTS       # features/step_definitions/steps.rb:15
+    And I fill in CHEM for name # features/step_definitions/steps.rb:62
+CHEM
+CHEM
+xxxxx
+    And I click button Submit   # features/step_definitions/steps.rb:15
+    And I should see CHEM       # features/step_definitions/steps.rb:34
+
+  Scenario: creating a subject and a course number # features/course.feature:15
+    Given I am on the home page                    # features/step_definitions/steps.rb:1
+    And I am logged in                             # features/step_definitions/steps.rb:54
+    And I am on the home page                      # features/step_definitions/steps.rb:1
+    When I click SUBJECTS                          # features/step_definitions/steps.rb:15
+    And I fill in COMS for name                    # features/step_definitions/steps.rb:62
+COMS
+COMS
+xxxxx
+    And I click button Submit                      # features/step_definitions/steps.rb:15
+    And I should see COMS                          # features/step_definitions/steps.rb:34
+    And I fill in 4118 for name                    # features/step_definitions/steps.rb:62
+    And I click button Submit                      # features/step_definitions/steps.rb:15
+    Then I should see COMS                         # features/step_definitions/steps.rb:34
+    And I should see 4118                          # features/step_definitions/steps.rb:34
+    And I should see Submit New Tutor Search       # features/step_definitions/steps.rb:34
+    And I should see Submit New Pupil Search       # features/step_definitions/steps.rb:34
+
+Feature: log in via Facebook
+  As a Columbia University student
+  So that I could easily start using tutorlama without much hassle
+  I want to be able to log in using my Facebook account
+
+  Scenario: authenticated through Facebook successfully # features/log_in.feature:6
+    Given I am on the home page                         # features/step_definitions/steps.rb:1
+    When I click sign_in                                # features/step_definitions/steps.rb:15
+    Then I should be on the main page                   # features/step_definitions/steps.rb:23
+    And I should see Tutor Searches for @Columbia       # features/step_definitions/steps.rb:34
+    And I should see Pupil Searches for @Columbia       # features/step_definitions/steps.rb:34
+    And 1 user should exist                             # features/step_definitions/steps.rb:42
+
+  @log_in_failure
+  Scenario: authenticated through Facebook unsuccessfully # features/log_in.feature:15
+    Given I am on the home page                           # features/step_definitions/steps.rb:1
+    When I click sign_in                                  # features/step_definitions/steps.rb:15
+    And I should not see Tutor Searches for @Columbia     # features/step_definitions/steps.rb:34
+    And I should not see Pupil Searches for @Columbia     # features/step_definitions/steps.rb:34
+    And 0 user should exist                               # features/step_definitions/steps.rb:42
+
+Feature: Submit requests on searches
+  As a Tutorlama user
+  So that I can respond to the searches and reach out to potential tutor/tutee
+  I want to be able to send a request to the OP of a search
+
+  Scenario: Submit a request for a Tutor Search       # features/request.feature:6
+    Given There exists a Tutor Search                 # features/step_definitions/steps.rb:66
+    And I am on the home page                         # features/step_definitions/steps.rb:1
+    And I am logged in                                # features/step_definitions/steps.rb:54
+    And I am on tutor search post                     # features/step_definitions/steps.rb:1
+    And I should not see This is your post            # features/step_definitions/steps.rb:34
+    And I should see Submit a new request to the post # features/step_definitions/steps.rb:34
+    When I fill in Hi for title                       # features/step_definitions/steps.rb:62
+    And I fill in I can pay big bucks for text        # features/step_definitions/steps.rb:62
+    And I fill in cu@cu.edu for contact               # features/step_definitions/steps.rb:62
+{"controller"=>"requests", "action"=>"show", "id"=>"1"}
+    And I click button Submit                         # features/step_definitions/steps.rb:15
+    Then I should see Hi                              # features/step_definitions/steps.rb:34
+    And I should see I can pay big bucks              # features/step_definitions/steps.rb:34
+    And I should see cu@cu.edu                        # features/step_definitions/steps.rb:34
+    And I click My Profile                            # features/step_definitions/steps.rb:15
+    And I should see Hi                               # features/step_definitions/steps.rb:34
+    And I should see [COMS4181]                       # features/step_definitions/steps.rb:34
+
+  Scenario: Submit a request for a Tutee Search         # features/request.feature:24
+    Given There exists a Tutee Search                   # features/step_definitions/steps.rb:66
+    And I am on the home page                           # features/step_definitions/steps.rb:1
+    And I am logged in                                  # features/step_definitions/steps.rb:54
+1
+    And I am on tutee search post                       # features/step_definitions/steps.rb:1
+    And I should not see This is your post              # features/step_definitions/steps.rb:34
+    And I should see Submit a new request to the post   # features/step_definitions/steps.rb:34
+    When I fill in Hi I can help you for title          # features/step_definitions/steps.rb:62
+    And I fill in I am well qualified for this for text # features/step_definitions/steps.rb:62
+    And I fill in lee@cu.edu for contact                # features/step_definitions/steps.rb:62
+{"controller"=>"requests", "action"=>"show", "id"=>"1"}
+    And I click button Submit                           # features/step_definitions/steps.rb:15
+    Then I should see Hi I can help you                 # features/step_definitions/steps.rb:34
+    And I should see I am well qualified for this       # features/step_definitions/steps.rb:34
+    And I should see lee@cu.edu                         # features/step_definitions/steps.rb:34
+    And I click My Profile                              # features/step_definitions/steps.rb:15
+    And I should see Hi I can help you                  # features/step_definitions/steps.rb:34
+    And I should see [COMS4181]                         # features/step_definitions/steps.rb:34
+
+  Scenario: Others submit a request to my tutor search  # features/request.feature:42
+    Given I am on the home page                         # features/step_definitions/steps.rb:1
+    And I am logged in                                  # features/step_definitions/steps.rb:54
+    And I create a Tutor Search                         # features/step_definitions/steps.rb:77
+    When other user submit a request on my Tutor Search # features/step_definitions/steps.rb:87
+    And I click My Profile                              # features/step_definitions/steps.rb:15
+    Then I should see I think i can be your tutor       # features/step_definitions/steps.rb:34
+    And I should see [COMS4181]                         # features/step_definitions/steps.rb:34
+
+  Scenario: Others submit a request to my tutee search  # features/request.feature:51
+    Given I am on the home page                         # features/step_definitions/steps.rb:1
+    And I am logged in                                  # features/step_definitions/steps.rb:54
+    And I create a Tutee Search                         # features/step_definitions/steps.rb:77
+    When other user submit a request on my Tutee Search # features/step_definitions/steps.rb:87
+    And I click My Profile                              # features/step_definitions/steps.rb:15
+    Then I should see I need your help                  # features/step_definitions/steps.rb:34
+    And I should see [COMS4181]                         # features/step_definitions/steps.rb:34
+
+Feature: Post Tutor Searches and Tutee Searches
+  As a tutor or a tutee,
+  So that I can find the tutor/tutee I am looking for
+  I want to be able to create a post to search for tutors or tutees
+
+  Scenario: Post a tutor search on COMS 4118            # features/tutor_search.feature:6
+    Given I am on the home page                         # features/step_definitions/steps.rb:1
+    And I am logged in                                  # features/step_definitions/steps.rb:54
+    And I am on the home page                           # features/step_definitions/steps.rb:1
+    And I click SUBJECTS                                # features/step_definitions/steps.rb:15
+    And I fill in COMS for name                         # features/step_definitions/steps.rb:62
+COMS
+COMS
+xxxxx
+    And I click button Submit                           # features/step_definitions/steps.rb:15
+    And I should see COMS                               # features/step_definitions/steps.rb:34
+    And I fill in 4118 for name                         # features/step_definitions/steps.rb:62
+    And I click button Submit                           # features/step_definitions/steps.rb:15
+    When I click button Submit New Tutor Search         # features/step_definitions/steps.rb:15
+    And I fill in LOOKING FOR TUTOR for title           # features/step_definitions/steps.rb:62
+    And I fill in Anybody looking? for text             # features/step_definitions/steps.rb:62
+    And I click button Save changes                     # features/step_definitions/steps.rb:15
+    Then I should be on newly created tutor search page # features/step_definitions/steps.rb:23
+    And I should see LOOKING FOR TUTOR                  # features/step_definitions/steps.rb:34
+    And I should see Anybody looking?                   # features/step_definitions/steps.rb:34
+    And I should see This is your post                  # features/step_definitions/steps.rb:34
+    And 1 tutor search should exist                     # features/step_definitions/steps.rb:50
+    And I click My Profile                              # features/step_definitions/steps.rb:15
+    And I should see LOOKING FOR TUTOR                  # features/step_definitions/steps.rb:34
+    And I should see [COMS4118]                         # features/step_definitions/steps.rb:34
+
+  Scenario: Post a tutee search on COMS 4118                  # features/tutor_search.feature:29
+    Given I am on the home page                               # features/step_definitions/steps.rb:1
+    And I am logged in                                        # features/step_definitions/steps.rb:54
+    And I am on the home page                                 # features/step_definitions/steps.rb:1
+    And I click SUBJECTS                                      # features/step_definitions/steps.rb:15
+    And I fill in COMS for name                               # features/step_definitions/steps.rb:62
+COMS
+COMS
+xxxxx
+    And I click button Submit                                 # features/step_definitions/steps.rb:15
+    And I should see COMS                                     # features/step_definitions/steps.rb:34
+    And I fill in 4118 for name                               # features/step_definitions/steps.rb:62
+    And I click button Submit                                 # features/step_definitions/steps.rb:15
+{"number_id"=>"1", "controller"=>"tutee_searches", "action"=>"new"}
+    When I click button Submit New Pupil Search               # features/step_definitions/steps.rb:15
+    And I fill in I AM A GENIUS for title                     # features/step_definitions/steps.rb:62
+    And I fill in I can guarantee an A for you in OS for text # features/step_definitions/steps.rb:62
+{"utf8"=>"✓", "title"=>"I AM A GENIUS", "text"=>"I can guarantee an A for you in OS", "number_id"=>"1", "commit"=>"Save changes", "controller"=>"tutee_searches", "action"=>"create"}
+1
+    And I click button Save changes                           # features/step_definitions/steps.rb:15
+    Then I should be on newly created tutee search page       # features/step_definitions/steps.rb:23
+    And I should see I AM A GENIUS                            # features/step_definitions/steps.rb:34
+    And I should see I can guarantee an A for you in OS       # features/step_definitions/steps.rb:34
+    And I should see This is your post                        # features/step_definitions/steps.rb:34
+    And 1 tutee search should exist                           # features/step_definitions/steps.rb:46
+    And I click My Profile                                    # features/step_definitions/steps.rb:15
+    And I should see I AM A GENIUS                            # features/step_definitions/steps.rb:34
+    And I should see [COMS4118]                               # features/step_definitions/steps.rb:34
+
+12 scenarios (12 passed)
+155 steps (155 passed)
+0m1.314s

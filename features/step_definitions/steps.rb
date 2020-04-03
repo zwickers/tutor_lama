@@ -5,6 +5,10 @@ Given(/^I am on (.*)$/) do |arg|
     visit('/tutor_searches')
   elsif arg == 'the Active Pupil Searches page'
     visit('/tutee_searches')
+  elsif arg == 'tutor search post'
+    visit('/tutor_searches/1')
+  elsif arg == 'tutee search post'
+    visit('/tutee_searches/1')
   end
 end
 
@@ -59,17 +63,34 @@ When /^(?:|I )fill in ([^"]*) for ([^"]*)$/ do |value, field|
   fill_in(field, :with => value)
 end
 
-
-Given(/^There exists a (.*) Search$/) do |arg|
-  visit('/')
-  click_link('sign_in')
+Given(/^There exists a ([^"]*) Search/) do | arg |
+  User.create()
+  Subject.create(name: 'COMS')
+  Number.create(name: '4181', subject_id: 1)
   if arg == 'Tutor'
-    visit('/tutor_searches/new')
-  elsif arg == 'Pupil'
-    visit('/tutee_searches/new')
+    TutorSearch.create(number_id: 1, user_id: 1, title: 'Security I needs help', text: 'I can pay big bucks')
+  elsif arg == 'Tutee'
+    TuteeSearch.create(number_id: 1, user_id: 1, title: 'Anyone needs help with Security I?', text: 'I can help')
   end
-  fill_in('title', :with => 'looking for tutor for calc 3')
-  fill_in('text', :with => 'welp')
-  click_button('commit')
-  click_link('sign_out')
+end
+
+Given(/^I create a ([^"]*) Search/) do | arg |
+  Subject.create(name: 'COMS')
+  Number.create(name: '4181', subject_id: 1)
+  if arg == 'Tutor'
+    TutorSearch.create(number_id: 1, user_id: 1, title: 'Security I needs help', text: 'I can pay big bucks')
+  elsif arg == 'Tutee'
+    TuteeSearch.create(number_id: 1, user_id: 1, title: 'Anyone needs help with Security I?', text: 'I can help')
+  end
+end
+
+When(/^other user submit a request on my ([^"]*) Search/) do | arg |
+  User.create()
+  if arg == 'Tutor'
+    Request.create(number_id: 1, requester_id: 2, receiver_id: 1, tutor_search_id: 1,
+                   title: 'I think i can be your tutor', text: 'I am qualified', contact: '2122222222')
+  elsif arg == 'Tutee'
+    Request.create(number_id: 1, requester_id: 2, receiver_id: 1, tutee_search_id: 1,
+                   title: 'I need your help', text: 'Please I am failing', contact: 'cc@cu.edu')
+  end
 end

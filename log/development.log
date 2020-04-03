@@ -12449,3 +12449,274 @@ Processing by WelcomeController#show as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
   Rendered welcome/show.html.erb within layouts/application (28.9ms)
 Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-03 17:12:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (5.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 56ms (ActiveRecord: 31.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  app/controllers/application_controller.rb:9:in `current_user'
+  app/controllers/welcome_controller.rb:3:in `show'
+
+
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.4ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-03 17:12:37 -0400
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 384ms (Views: 383.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-ba3c4421c8261b1e461808a72d95b97c80b98a2e7bd78f4fc058dc836d9a4bed.css?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/numbers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/subjects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/tooltip.self-f0fd14203f8a882bd4de656741e42e5ee825ca8b26d46384441b923e558cf3ce.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/popper.self-55bd1408b0e4ff3edf21524b78fbe2266615c8015ce0e5f0828089b1de27d63c.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/jquery3.self-e200ee796ef24add7054280d843a80de75392557bb4248241e870fac0914c0c1.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/util.self-f10a2d4eac0ee99fa400f029db49af1fd010c576cac4e650b85d1202d2c4f424.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-5a65c217abd0ec02ab6153a25f079f7c39ffdae8854c8645ece90a9ba271d179.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/toast.self-7a6f8c5f1cd1aa8a2a5dee63a4c5571cb4e3db9cebe8948b9bdee19c6a5331eb.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-e7fbc6a07cca14de58e464cb5c7d1578c1836271c3996133399b49c6a70de0de.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-a223ac0d7dfbd7366f542e625b31c27661ba469855c9280510dda88fd855dab7.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-1c01706b4b1c4707227c7f728c941f117b0ee282a8ee7b9a9cc3df60d8f99e44.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/button.self-2ff3013d73651d06fe4d9d77f5f19a85c2d703518de59fa0cc98abc0cd2c53cc.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-ad595ee862ecb2733888865b4195b18f0f24b879eb929c5e2ff5485834402913.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-b068ebef629c548014781670d908df59766351efaaaad98f515d20e2407fc9e0.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-be7def30193c37dfea593846cb69379e6136046e98137891c7df475375c1937a.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-a305b7455fdf72315b2d90715e9304efa43d0f68be07ccfce594f38a6cde7610.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-00099e4b1b00919455049c43f1e486532228d7908a6898503351f1c824b2412c.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/assets/application.self-b3015cbdf0ef4cea123f8a1e5534e9de65c5f50b8b61256498b2ef8b8ade55ce.js?body=1" for 127.0.0.1 at 2020-04-03 17:12:38 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-04-03 17:12:40 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBgSaL24J7E-rwkYVZRxzj2oKTkMltVKXTM4xX4K-4p0glZM8RQd6JD5NZJPl_j3_orNga13imBJsENMsHT5K1_65K-lpVJkJbKO2iMCC_qsAnEcMu8IwMYeJBUf5WjutOaga-AAWemuMETSOcWcIi75YHFs5DStGhIM2CPcenZ2h4COefTYb-8moG6mP6b7hbDxdH0_xhjj74ayCp70nUREHG-oUqF2KNr0Zbn76LfsZahGfwZv_xXx0x70BSRuntWKQeJ2htSgdCv-mKcvizfYCM6pARsEFn5cjW4j1Bs0S2qFWliyxUmSsyXe_7twNXEfO7gKVIQ-IDzYwYLjNIi&state=31d7b33764476f9dd12324e3dfff26e16848e7769b3d84d4" for 127.0.0.1 at 2020-04-03 17:12:48 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBgSaL24J7E-rwkYVZRxzj2oKTkMltVKXTM4xX4K-4p0glZM8RQd6JD5NZJPl_j3_orNga13imBJsENMsHT5K1_65K-lpVJkJbKO2iMCC_qsAnEcMu8IwMYeJBUf5WjutOaga-AAWemuMETSOcWcIi75YHFs5DStGhIM2CPcenZ2h4COefTYb-8moG6mP6b7hbDxdH0_xhjj74ayCp70nUREHG-oUqF2KNr0Zbn76LfsZahGfwZv_xXx0x70BSRuntWKQeJ2htSgdCv-mKcvizfYCM6pARsEFn5cjW4j1Bs0S2qFWliyxUmSsyXe_7twNXEfO7gKVIQ-IDzYwYLjNIi", "state"=>"31d7b33764476f9dd12324e3dfff26e16848e7769b3d84d4", "provider"=>"facebook"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "123777082571266"]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-03 17:12:48 -0400
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.8ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (5.7ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.7ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 99ms (Views: 76.6ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2020-04-03 17:12:51 -0400
+Processing by SubjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.5ms)[0m  SELECT "subjects".* FROM "subjects"
+  Rendered subjects/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2020-04-03 17:12:55 -0400
+Processing by SubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yXov0AXdQsxp5Jq7lEnwwDtRFtJ/DNo3+mvq+b844cmgfZTRKlZnha+WcYnJ0Yzy/TtupaZ5qTvVol22+sTCOw==", "name"=>"CHEM", "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CHEM"], ["created_at", "2020-04-03 21:12:55.491850"], ["updated_at", "2020-04-03 21:12:55.491850"]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to https://localhost:3000/subjects/2/numbers
+Completed 302 Found in 20ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/subjects/2/numbers" for 127.0.0.1 at 2020-04-03 17:12:55 -0400
+Processing by NumbersController#index as HTML
+  Parameters: {"subject_id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT "numbers".* FROM "numbers" WHERE "numbers"."subject_id" = $1  [["subject_id", 2]]
+  Rendered numbers/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/subjects/2/numbers" for 127.0.0.1 at 2020-04-03 17:14:14 -0400
+Processing by NumbersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cjvdhoLN8zcdV/Aln1ekEshAKorshYlLmm82l7lzvkQbPGaHrUbWftslGxfCz9ggDipS/TXw+ke1poHY/I+dtg==", "name"=>"1001", "commit"=>"Submit", "subject_id"=>"2"}
+  [1m[36mSubject Load (0.1ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "numbers" ("name", "subject_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "1001"], ["subject_id", 2], ["created_at", "2020-04-03 21:14:15.002591"], ["updated_at", "2020-04-03 21:14:15.002591"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to https://localhost:3000/subjects/2/numbers/3
+Completed 302 Found in 17ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/subjects/2/numbers/3" for 127.0.0.1 at 2020-04-03 17:14:15 -0400
+Processing by NumbersController#show as HTML
+  Parameters: {"subject_id"=>"2", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.1ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mNumber Load (0.1ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mTutorSearch Load (0.2ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."number_id" = $1  [["number_id", 3]]
+  [1m[36mTuteeSearch Load (6.0ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."number_id" = $1[0m  [["number_id", 3]]
+  Rendered numbers/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 57ms (Views: 48.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-03 17:58:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 316ms (Views: 310.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-ba3c4421c8261b1e461808a72d95b97c80b98a2e7bd78f4fc058dc836d9a4bed.css?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/numbers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/util.self-f10a2d4eac0ee99fa400f029db49af1fd010c576cac4e650b85d1202d2c4f424.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/popper.self-55bd1408b0e4ff3edf21524b78fbe2266615c8015ce0e5f0828089b1de27d63c.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/subjects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/tooltip.self-f0fd14203f8a882bd4de656741e42e5ee825ca8b26d46384441b923e558cf3ce.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/jquery3.self-e200ee796ef24add7054280d843a80de75392557bb4248241e870fac0914c0c1.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-5a65c217abd0ec02ab6153a25f079f7c39ffdae8854c8645ece90a9ba271d179.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/toast.self-7a6f8c5f1cd1aa8a2a5dee63a4c5571cb4e3db9cebe8948b9bdee19c6a5331eb.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-a223ac0d7dfbd7366f542e625b31c27661ba469855c9280510dda88fd855dab7.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-ad595ee862ecb2733888865b4195b18f0f24b879eb929c5e2ff5485834402913.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-1c01706b4b1c4707227c7f728c941f117b0ee282a8ee7b9a9cc3df60d8f99e44.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/button.self-2ff3013d73651d06fe4d9d77f5f19a85c2d703518de59fa0cc98abc0cd2c53cc.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-e7fbc6a07cca14de58e464cb5c7d1578c1836271c3996133399b49c6a70de0de.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-b068ebef629c548014781670d908df59766351efaaaad98f515d20e2407fc9e0.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-be7def30193c37dfea593846cb69379e6136046e98137891c7df475375c1937a.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-a305b7455fdf72315b2d90715e9304efa43d0f68be07ccfce594f38a6cde7610.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-00099e4b1b00919455049c43f1e486532228d7908a6898503351f1c824b2412c.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
+
+
+Started GET "/assets/application.self-b3015cbdf0ef4cea123f8a1e5534e9de65c5f50b8b61256498b2ef8b8ade55ce.js?body=1" for 127.0.0.1 at 2020-04-03 17:58:24 -0400
