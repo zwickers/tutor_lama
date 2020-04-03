@@ -43,7 +43,7 @@ See cucumber_tests_results for the actual text file.
 
 ## Github link
 
-https://github.com/zwickers/tutor_lama/tree/postgre
+https://github.com/zwickers/tutor_lama
 
 ## Heroku Deploy URL
 
