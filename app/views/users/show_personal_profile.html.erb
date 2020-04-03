@@ -47,6 +47,32 @@
     <% end %>
   </table>
 
+<h2>Requests:</h2>
+
+<table>
+  <tr>
+    <th>Request Sent</th>
+  </tr>
+
+  <% @sent_requests.each do |request| %>
+    <tr>
+      <td><%= link_to "[#{request.number.subject.name}#{request.number.name}] #{request.title}", request_path(request) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Request Received</th>
+  </tr>
+
+  <% @received_requests.each do |request| %>
+    <tr>
+      <td><%= link_to "[#{request.number.subject.name}#{request.number.name}] #{request.title}", request_path(request) %></td>
+    </tr>
+  <% end %>
+</table>
+
   <%= link_to 'Submit New Searches', subjects_path %>
 
 <%= link_to 'Back to main page', root_path %>

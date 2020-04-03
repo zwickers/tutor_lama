@@ -1,5 +1,9 @@
 <%= javascript_include_tag "tooltip" %>
 
+<% if @owner %>
+  This is your posting.
+<% end %>
+
 <div class="card" style="margin-top:15px;">
   <div class="card-body">
     <h1 class="card-title"><%= @tutee_search.title %></h1>
@@ -27,5 +31,24 @@
     <%= button_to "Add Comment", "/comments/new/tutee/#{params[:id]}", method: "get", class: "card-link", title:
     'Please be kind!', 'data-toggle' => 'tooltip', 'data-placement' => 'top'  %>
   </div>
-
 </div>
+<% unless @owner %>
+  <%= form_tag(requests_path) do %>
+    <p>
+      <%= label_tag 'Submit a new request to the post' %><br>
+      <%= label_tag 'Title' %><br>
+      <%= text_field_tag :title %><br>
+      <%= label_tag 'Text' %><br>
+      <%= text_field_tag :text %><br>
+      <%= label_tag 'Contact info' %><br>
+      <%= text_field_tag :contact %>
+      <%= hidden_field_tag :number_id, @tutee_search.number.id %>
+      <%= hidden_field_tag :requester_id, @current_user.id %>
+      <%= hidden_field_tag :receiver_id, @tutee_search.user.id %>
+      <%= hidden_field_tag :tutee_search_id, @tutee_search.id %>
+    </p>
+    <p>
+      <%= submit_tag 'Submit' %>
+    </p>
+  <% end %>
+<% end %>

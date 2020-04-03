@@ -1,9 +1,13 @@
 <%= javascript_include_tag "tooltip" %>
 
+<% if @owner %>
+  This is your posting.
+<% end %>
+
 <div class="card" style="margin-top:15px;">
   <div class="card-body">
     <h1 class="card-title"><%= @tutor_search.title %></h1>
-    <h6 class="card-subtitle mb-2 text-muted">For [<%= @tutee_search.number.subject.name %><%= @tutee_search.number.name %>], Posted by <%= link_to User.find(@tutor_search.user_id).name, "/users/" + @tutor_search.user_id.to_s %> on <strong><%= @tutor_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
+    <h6 class="card-subtitle mb-2 text-muted">For [<%= @tutor_search.number.subject.name %><%= @tutor_search.number.name %>], Posted by <%= link_to User.find(@tutor_search.user_id).name, "/users/" + @tutor_search.user_id.to_s %> on <strong><%= @tutor_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
     <p class="card-text"><%= @tutor_search.text %></p>
     <%= link_to 'Back to Tutor Listings', tutor_searches_path, class: "card-link" %>
     <a href="#" class="card-link">Bid on this pupil...</a> <!-- TODO: make this get a form for request -->
@@ -25,5 +29,25 @@
     <%= button_to "Add Comment", "/comments/new/tutor/#{params[:id]}", method: "get", class: "card-link", title:
     'Please be kind!', 'data-toggle' => 'tooltip', 'data-placement' => 'top'  %>
   </div>
-
 </div>
+
+<% unless @owner %>
+  <%= form_tag(requests_path) do  %>
+  <p>
+    <%= label_tag 'Submit a new request to the post' %><br>
+    <%= label_tag 'Title'  %><br>
+    <%= text_field_tag :title %><br>
+    <%= label_tag 'Text'  %><br>
+    <%= text_field_tag :text %><br>
+    <%= label_tag 'Contact info'  %><br>
+    <%= text_field_tag :contact %>
+    <%= hidden_field_tag :number_id, @tutor_search.number.id  %>
+    <%= hidden_field_tag :requester_id, @current_user.id  %>
+    <%= hidden_field_tag :receiver_id, @tutor_search.user.id %>
+    <%= hidden_field_tag :tutor_search_id, @tutor_search.id  %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit'  %>
+  </p>
+  <% end %>
+<% end %>

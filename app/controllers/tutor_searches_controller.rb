@@ -24,6 +24,7 @@ class TutorSearchesController < ApplicationController
 
   def show
     @tutor_search = TutorSearch.find(params[:id])
+    @owner = current_user.id == @tutor_search.user.id
   end
 
   private

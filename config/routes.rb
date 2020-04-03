@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :requests
+
   # create a session when a user authenticates via facebook
   match 'auth/:provider/callback', to: 'sessions#create', :via => [:get]
   # redirect to homepage on authentication failure
@@ -18,6 +20,9 @@ Rails.application.routes.draw do
 
   get 'comments/new/:post_type/:id' => 'comments#new_comment'
   post 'comments/:post_type/:id' => 'comments#create_comment'
+
+  post 'requests' => 'requests#create'
+  get 'requests/:id' => 'requests#show'
 
   resources :tutor_searches
   resources :tutee_searches

@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 		end
 		@my_tutor_searches = TutorSearch.where(user_id: current_user.id)
 		@my_tutee_searches = TuteeSearch.where(user_id: current_user.id)
+		@sent_requests = current_user.sent_requests
+		@received_requests = current_user.received_requests
 	end
 
 	# show profile of arbitrary user

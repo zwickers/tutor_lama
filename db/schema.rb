@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200401221641) do
+ActiveRecord::Schema.define(version: 20200403025727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 20200401221641) do
   end
 
   add_index "numbers", ["subject_id"], name: "index_numbers_on_subject_id", using: :btree
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "requester_id"
+    t.integer  "receiver_id"
+    t.integer  "number_id"
+    t.text     "title"
+    t.text     "text"
+    t.text     "contact"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "tutee_search_id"
+    t.integer  "tutor_search_id"
+  end
+
+  add_index "requests", ["number_id"], name: "index_requests_on_number_id", using: :btree
+  add_index "requests", ["tutee_search_id"], name: "index_requests_on_tutee_search_id", using: :btree
+  add_index "requests", ["tutor_search_id"], name: "index_requests_on_tutor_search_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
@@ -78,6 +95,9 @@ ActiveRecord::Schema.define(version: 20200401221641) do
   end
 
   add_foreign_key "numbers", "subjects"
+  add_foreign_key "requests", "numbers"
+  add_foreign_key "requests", "tutee_searches"
+  add_foreign_key "requests", "tutor_searches"
   add_foreign_key "tutee_searches", "numbers"
   add_foreign_key "tutee_searches", "users"
   add_foreign_key "tutor_searches", "numbers"
