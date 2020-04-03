@@ -14,7 +14,7 @@ class TutorSearchesController < ApplicationController
 
   def create
     @tutor_search = current_user.tutor_searches.create(tutor_search_params)
-    @tutee_search.number_id = params[:number_id]
+    @tutor_search.number_id = params[:number_id]
     if @tutor_search.save
       redirect_to @tutor_search
     else
