@@ -30,8 +30,8 @@ thin start --ssl --ssl-key-file localhost.key --ssl-cert-file localhost.crt
 
 ## Databases
 
-Development and Production are using postgreSQL.
-Testing is using SQLite3.
+SQLite3 is used for our development and testing databases.
+Our production database is PostgreSQL, as this was needed to host the app on Heroku.
 
 ## User Stories and Testing suite
 
