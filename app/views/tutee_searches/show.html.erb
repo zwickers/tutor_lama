@@ -10,7 +10,9 @@
     <h6 class="card-subtitle mb-2 text-muted">For [<%= @tutee_search.number.subject.name %><%= @tutee_search.number.name %>], Posted by <%= link_to User.find(@tutee_search.user_id).name, "/users/" + @tutee_search.user_id.to_s %> on <strong><%= @tutee_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
     <p class="card-text"><%= @tutee_search.text %></p>
     <%= link_to 'Back to Pupil Listings', tutee_searches_path, class: "card-link" %>
-    <a href="#" class="card-link">Bid on this tutor...</a> <!-- TODO: make this get a form for request -->
+    <button type="button" class="btn btn-primary card-link" data-toggle="modal" data-target="#exampleModalCenter">
+      Bid on this tutor...
+    </button>
   </div>
 </div>
 
@@ -32,23 +34,39 @@
     'Please be kind!', 'data-toggle' => 'tooltip', 'data-placement' => 'top'  %>
   </div>
 </div>
-<% unless @owner %>
-  <%= form_tag(requests_path) do %>
-    <p>
-      <%= label_tag 'Submit a new request to the post' %><br>
-      <%= label_tag 'Title' %><br>
-      <%= text_field_tag :title %><br>
-      <%= label_tag 'Text' %><br>
-      <%= text_field_tag :text %><br>
-      <%= label_tag 'Contact info' %><br>
-      <%= text_field_tag :contact %>
-      <%= hidden_field_tag :number_id, @tutee_search.number.id %>
-      <%= hidden_field_tag :requester_id, @current_user.id %>
-      <%= hidden_field_tag :receiver_id, @tutee_search.user.id %>
-      <%= hidden_field_tag :tutee_search_id, @tutee_search.id %>
-    </p>
-    <p>
-      <%= submit_tag 'Submit' %>
-    </p>
-  <% end %>
-<% end %>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Bid on tutor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <%= form_tag(requests_path) do  %>
+      <p>
+        <%= label_tag 'Title'  %><br>
+        <%= text_field_tag :title %><br>
+        <%= label_tag 'Text'  %><br>
+        <%= text_field_tag :text %><br>
+        <%= label_tag 'Contact info'  %><br>
+        <%= text_field_tag :contact %>
+        <%= hidden_field_tag :number_id, @tutee_search.number.id  %>
+        <%= hidden_field_tag :requester_id, @current_user.id  %>
+        <%= hidden_field_tag :receiver_id, @tutee_search.user.id %>
+        <%= hidden_field_tag :tutor_search_id, @tutee_search.id  %>
+      </p>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <%= submit_tag 'Send bid...', class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
