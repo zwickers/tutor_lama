@@ -14,9 +14,6 @@ class SubjectsController < ApplicationController
 
   def create
     @subject = Subject.create(name: params[:name])
-    puts(params[:name])
-    puts(@subject.name)
-    puts("xxxxx")
     if @subject.save
       redirect_to subject_numbers_path(@subject)
     end

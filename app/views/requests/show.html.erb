@@ -1,9 +1,20 @@
-requester_id: <%= @request.requester_id %><br>
-receiver_id: <%= @request.receiver_id %><br>
-number_id: <%= @request.number_id %><br>
-tutor_search_id: <%= @request.tutor_search_id %><br>
-tutee_search_id: <%= @request.tutee_search_id %><br>
-<br>
-title: <%= @request.title %><br>
-text: <%= @request.text %><br>
-contact: <%= @request.contact %><br>
+<div class="card" style="margin-top:15px;">
+  <div class="card-body">
+    <h1 class="card-title">Request: <%= @request.title %></h1>
+    <h6 class="card-subtitle mb-2 text-muted">For [<%= @request.number.subject.name %><%= @request.number.name %>], From <%= @request.requester.name %> to <%= @request.receiver.name %></h6>
+    <div class="card-text">
+      <%= @request.text %><br>
+    </div><br/>
+    <div class="card-text">
+      Contact Info: <%= @request.contact %>
+    </div>
+    <div class="card-text">
+      <% if @request.tutor_search_id %>
+        <%= link_to 'Back to this tutor search', tutor_search_path(@request.tutor_search) %>
+      <% end %>
+      <% if @request.tutee_search_id %>
+        <%= link_to 'Back to this tutee search', tutee_search_path(@request.tutee_search) %>
+      <% end %>
+    </div>
+  </div>
+</div>

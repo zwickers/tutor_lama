@@ -20,60 +20,46 @@
   <div class="col-md-3"></div>
 </div>
 
-<h2>Posts:</h2>
-
-<table>
-    <tr>
-      <th>Tutor Searches</th>
-    </tr>
-
+<div class="card" style="margin-top:15px;">
+  <div class="card-body">
+    <h1 class="card-title">Searches</h1>
+    <h6 class="card-subtitle mb-2 text-muted">Tutor Searches</h6>
     <% @my_tutor_searches.each do |post| %>
-      <tr>
-        <td><%= User.find(post.user_id).name %></td>
-        <td><%= link_to "#{post.title}", tutor_search_path(post) %></td>
-      </tr>
+      <div class="card-text">
+        <%= link_to "[#{post.number.subject.name}#{post.number.name}] #{post.title}", tutor_search_path(post) %>
+      </div>
     <% end %>
-  </table>
-
-  <table>
-    <tr>
-      <th>Tutee Searches</th>
-    </tr>
-
+    <br/>
+    <h6 class="card-subtitle mb-2 text-muted">Pupil Searches</h6>
     <% @my_tutee_searches.each do |post| %>
-      <tr>
-        <td><%= link_to "#{post.title}", tutee_search_path(post) %></td>
-      </tr>
+      <div class="card-text">
+        <%= link_to "[#{post.number.subject.name}#{post.number.name}] #{post.title}", tutee_search_path(post) %>
+      </div>
     <% end %>
-  </table>
+    <br/>
+    <%= link_to 'Submit New Searches', subjects_path %>
+  </div>
+</div>
 
-<h2>Requests:</h2>
+<div class="card" style="margin-top:15px;">
+  <div class="card-body">
+    <h1 class="card-title">Requests</h1>
+    <h6 class="card-subtitle mb-2 text-muted">Request Sent</h6>
+    <% @sent_requests.each do |request| %>
+      <div class="card-text">
+        <%= link_to "[#{request.number.subject.name}#{request.number.name}] #{request.title}", request_path(request) %>
+      </div>
+    <% end %>
+    <br/>
+    <h6 class="card-subtitle mb-2 text-muted">Request Received</h6>
+    <% @received_requests.each do |request| %>
+      <div class="card-text">
+        <%= link_to "[#{request.number.subject.name}#{request.number.name}] #{request.title}", request_path(request) %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Request Sent</th>
-  </tr>
+<br/><br/>
 
-  <% @sent_requests.each do |request| %>
-    <tr>
-      <td><%= link_to "[#{request.number.subject.name}#{request.number.name}] #{request.title}", request_path(request) %></td>
-    </tr>
-  <% end %>
-</table>
-
-<table>
-  <tr>
-    <th>Request Received</th>
-  </tr>
-
-  <% @received_requests.each do |request| %>
-    <tr>
-      <td><%= link_to "[#{request.number.subject.name}#{request.number.name}] #{request.title}", request_path(request) %></td>
-    </tr>
-  <% end %>
-</table>
-
-  <%= link_to 'Submit New Searches', subjects_path %>
-
-<%= link_to 'Back to main page', root_path %>
 

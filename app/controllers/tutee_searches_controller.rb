@@ -8,7 +8,6 @@ class TuteeSearchesController < ApplicationController
   def new
     if current_user
       @tutee_search = TuteeSearch.new
-      puts(params)
       @number = Number.find(params[:number_id])
     end
   end
@@ -23,7 +22,6 @@ class TuteeSearchesController < ApplicationController
     if current_user
       @tutee_search = current_user.tutee_searches.create(tutee_search_params)
       @tutee_search.number_id = params[:number_id]
-      puts(params)
       if @tutee_search.save
         redirect_to @tutee_search
       else
@@ -36,7 +34,6 @@ class TuteeSearchesController < ApplicationController
     if current_user
       @tutee_search = TuteeSearch.find(params[:id])
       @owner = current_user.id == @tutee_search.user.id
-      puts(@tutee_search.number_id)
     end
   end
 

@@ -20,6 +20,10 @@ When(/^I click( button)? (.*)$/) do |button, arg|
   end
 end
 
+Then(/^I print$/) do
+  puts(page.body)
+end
+
 Then(/^I should be on (.*)$/) do |arg|
   url = URI.parse(current_url).path
   if arg == 'the main page'

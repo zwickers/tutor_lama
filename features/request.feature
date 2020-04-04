@@ -8,36 +8,21 @@ Feature: Submit requests on searches
     And I am on the home page
     And I am logged in
     And I am on tutor search post
-    And I should not see This is your post
-    And I should see Submit a new request to the post
-    When I fill in Hi for title
+    When I click button Bid on this pupil...
+    And I fill in Hi for title
     And I fill in I can pay big bucks for text
     And I fill in cu@cu.edu for contact
-    And I click button Submit
-    Then I should see Hi
-    And I should see I can pay big bucks
-    And I should see cu@cu.edu
-    And I click My Profile
-    And I should see Hi
-    And I should see [COMS4181]
+    Then I click button Send bid...
 
   Scenario: Submit a request for a Tutee Search
     Given There exists a Tutee Search
     And I am on the home page
     And I am logged in
     And I am on tutee search post
-    And I should not see This is your post
-    And I should see Submit a new request to the post
     When I fill in Hi I can help you for title
     And I fill in I am well qualified for this for text
     And I fill in lee@cu.edu for contact
-    And I click button Submit
-    Then I should see Hi I can help you
-    And I should see I am well qualified for this
-    And I should see lee@cu.edu
-    And I click My Profile
-    And I should see Hi I can help you
-    And I should see [COMS4181]
+    Then I click button Send bid...
 
   Scenario: Others submit a request to my tutor search
     Given I am on the home page
