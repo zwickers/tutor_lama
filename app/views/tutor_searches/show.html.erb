@@ -7,7 +7,7 @@
 <div class="card" style="margin-top:15px;">
   <div class="card-body">
     <h1 class="card-title"><%= @tutor_search.title %></h1>
-    <h6 class="card-subtitle mb-2 text-muted">For [<%= @tutor_search.number.subject.name %><%= @tutor_search.number.name %>], Posted by <%= link_to User.find(@tutor_search.user_id).name, "/users/" + @tutor_search.user_id.to_s %> on <strong><%= @tutor_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
+    <h6 class="card-subtitle mb-2 text-muted">For [<%= @tutor_search.number.subject.name %> <%= @tutor_search.number.name %>], Posted by <%= link_to User.find(@tutor_search.user_id).name, "/users/" + @tutor_search.user_id.to_s %> on <strong><%= @tutor_search.created_at.to_formatted_s(:long_ordinal)%></strong></h6>
     <p class="card-text"><%= @tutor_search.text %></p>
     <%= link_to 'Back to Tutor Listings', tutor_searches_path, class: "card-link" %>
     <button type="button" class="btn btn-primary card-link" data-toggle="modal" data-target="#exampleModalCenter">
