@@ -37,6 +37,18 @@ class TuteeSearchesController < ApplicationController
     end
   end
 
+  def destroy
+    begin 
+      @tutee_search = TuteeSearch.find(params[:id])
+      @tutee_search.destroy
+      puts "Successful Delete Tutee Search" 
+      redirect_to users_me_path
+    rescue
+      puts "Post has been deleted, Passed"
+      redirect_to users_me_path
+    end
+  end 
+
   private
   def tutee_search_params
     params.permit(:title, :text)

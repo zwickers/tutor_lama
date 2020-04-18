@@ -25,7 +25,11 @@ Rails.application.routes.draw do
   get 'requests/:id' => 'requests#show'
 
   resources :tutor_searches
+  delete '/tutor_searches/:id', to: 'tutor_searches#destroy', as: 'destroy_tutor_search'
+  
   resources :tutee_searches
+  delete '/tutee_searches/:id', to: 'tutee_searches#destroy', as: 'destroy_tutee_search'
+  
   resources :comments
 
   resources :subjects do

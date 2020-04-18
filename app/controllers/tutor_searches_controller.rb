@@ -27,6 +27,19 @@ class TutorSearchesController < ApplicationController
     @owner = current_user.id == @tutor_search.user.id
   end
 
+  def destroy
+    begin 
+      @tutor_search = TutorSearch.find(params[:id])
+      @tutor_search.destroy
+      puts "Successful Delete Tutor Search" 
+      redirect_to users_me_path
+    rescue
+      puts "Post has been deleted, Passed"
+      redirect_to users_me_path
+    end
+  end 
+
+
   private
   def tutor_search_params
     params.permit(:title, :text)
