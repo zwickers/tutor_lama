@@ -20,4 +20,20 @@ class RequestsController < ApplicationController
     puts(params)
     @request = Request.find(params[:id])
   end
+
+  def destroy
+    begin 
+      @request = Request.find(params[:id])
+      @request.destroy
+      puts "Successful Delete Request" 
+      redirect_to users_me_path
+    rescue
+      puts "Request has been deleted, Passed"
+      redirect_to users_me_path
+    end
+  end 
+
+ 
+
+
 end

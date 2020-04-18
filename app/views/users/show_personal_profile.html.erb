@@ -50,6 +50,7 @@
     <% @sent_requests.each do |request| %>
       <div class="card-text">
         <%= link_to "[#{request.number.subject.name} #{request.number.name}] #{request.title}", request_path(request) %>
+        <%= link_to "Delete", destroy_request_path(request), method: :delete, data: {confirm: "Are you sure you want to delete this?"}%>
       </div>
     <% end %>
     <br/>

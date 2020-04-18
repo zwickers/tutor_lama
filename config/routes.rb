@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :requests
+  delete '/requests/:id', to: 'requests#destroy', as: 'destroy_request'
 
   # create a session when a user authenticates via facebook
   match 'auth/:provider/callback', to: 'sessions#create', :via => [:get]
