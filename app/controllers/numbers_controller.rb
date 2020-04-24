@@ -17,9 +17,11 @@ class NumbersController < ApplicationController
 
   def create
     @subject = Subject.find(params[:subject_id])
-    @number = @subject.numbers.create(name:params[:name])
-    if @number.save
-      redirect_to subject_number_path(subject_id: @subject.id, id:@number.id)
+    @number = Number.find_by(name: params[:name], subject_id: @subject.id)
+    unless @number
+      @number = @subject.numbers.create(name:params[:name])
+      @number.save
     end
+    redirect_to subject_number_path(subject_id: @subject.id, id:@number.id)
   end
 end

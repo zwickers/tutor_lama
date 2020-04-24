@@ -13,10 +13,12 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    @subject = Subject.create(name: params[:name])
-    if @subject.save
-      redirect_to subject_numbers_path(@subject)
+    @subject = Subject.find_by_name(params[:name])
+    unless @subject
+      @subject = Subject.create(name: params[:name])
+      @subject.save
     end
+    redirect_to subject_numbers_path(@subject)
   end
 
   private

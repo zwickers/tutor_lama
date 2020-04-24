@@ -14383,3 +14383,316 @@ Processing by TutorSearchesController#show as HTML
   [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
   Rendered tutor_searches/show.html.erb within layouts/application (34.4ms)
 Completed 200 OK in 94ms (Views: 83.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-23 23:49:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.7ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.4ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 470ms (Views: 426.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-23 23:49:53 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 91ms (Views: 83.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-23 23:49:55 -0400
+Processing by WelcomeController#show as HTML
+  Parameters: {"authenticity_token"=>"mWJ2x2xtOX88rUQ7nHMoUL/rWxOnC86/yTdSYUE2INqlzaIUOLGfACtKVkYV0+gl1sO1gUmvvgPldYlO+zQ22g=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.1ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.2ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2020-04-23 23:49:56 -0400
+Processing by SubjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT "subjects".* FROM "subjects"
+  Rendered subjects/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2020-04-23 23:49:59 -0400
+Processing by SubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+kKT1mk51W4GyfsjRBclHLG78hLUXFagY9gbPBgkVAHG7UcFPeVzEREu6V7Nt+Vp2JMcgDr4JhxPmsAToiZCAQ==", "name"=>"COMS", "commit"=>"Submit"}
+  [1m[36mSubject Load (7.8ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "name"."name" = 'COMS' LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 8.1ms)
+
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "name"
+LINE 1: SELECT  "subjects".* FROM "subjects" WHERE "name"."name" = '...
+                                                   ^
+: SELECT  "subjects".* FROM "subjects" WHERE "name"."name" = 'COMS' LIMIT 1):
+  app/controllers/subjects_controller.rb:16:in `create'
+
+
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.5ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2020-04-23 23:50:49 -0400
+Processing by SubjectsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT "subjects".* FROM "subjects"[0m
+  Rendered subjects/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 75ms (Views: 55.6ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2020-04-23 23:50:52 -0400
+Processing by SubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nFjYXSIcMfMTMgKsWGEbvM5wMnexKdgXsp8GO9qIDzCg9wyOdsCXjATVENHRwdvJp1jc5V+NqKue3d0UYIoZMA==", "name"=>"COMS", "commit"=>"Submit"}
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."name" = $1 LIMIT 1  [["name", "COMS"]]
+Redirected to https://localhost:3000/subjects/1/numbers
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.8ms)[0m  INSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "COMS"], ["created_at", "2020-04-24 03:50:52.370469"], ["updated_at", "2020-04-24 03:50:52.370469"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 26.6ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/subjects_controller.rb:22:in `create'
+
+
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.6ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.0ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.6ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2020-04-23 23:52:38 -0400
+Processing by SubjectsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT "subjects".* FROM "subjects"[0m
+  Rendered subjects/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 52ms (Views: 39.5ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2020-04-23 23:52:43 -0400
+Processing by SubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CK6IrXS3u6op1H9JTVDl6AF1y5g2MzzoXKgLPfEbQzM0AVx+IGsd1T4zbTTE8CWdaF0lCtiXTFRw6tASSxlVMw==", "name"=>"COMS", "commit"=>"Submit"}
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."name" = $1 LIMIT 1  [["name", "COMS"]]
+Redirected to https://localhost:3000/subjects/1/numbers
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/subjects/1/numbers" for 127.0.0.1 at 2020-04-23 23:52:43 -0400
+Processing by NumbersController#index as HTML
+  Parameters: {"subject_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (2.2ms)[0m  [1mSELECT "numbers".* FROM "numbers" WHERE "numbers"."subject_id" = $1[0m  [["subject_id", 1]]
+  Rendered numbers/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 46ms (Views: 39.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2020-04-23 23:52:46 -0400
+Processing by SubjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT "subjects".* FROM "subjects"[0m
+  Rendered subjects/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/subjects/1/numbers" for 127.0.0.1 at 2020-04-23 23:55:20 -0400
+Processing by NumbersController#index as HTML
+  Parameters: {"subject_id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT "numbers".* FROM "numbers" WHERE "numbers"."subject_id" = $1  [["subject_id", 1]]
+  Rendered numbers/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 53ms (Views: 36.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/subjects/1/numbers/1" for 127.0.0.1 at 2020-04-23 23:55:23 -0400
+Processing by NumbersController#show as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.1ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (2.2ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."number_id" = $1  [["number_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (2.1ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."number_id" = $1  [["number_id", 1]]
+  Rendered numbers/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 55ms (Views: 42.9ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/subjects/1/numbers" for 127.0.0.1 at 2020-04-23 23:55:28 -0400
+Processing by NumbersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZMVMMUuG9IZ8H/XVmbriqHvzdPpUmCNMzQSDw5+qVPtYapjiH1pS+Wv456gQGiLdEtuaaLo8U/DhRljsJahC+w==", "name"=>"4118", "commit"=>"Submit", "subject_id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column subjects.subject_id does not exist
+LINE 1: ... FROM "subjects" WHERE "subjects"."name" = $1 AND "subjects"...
+                                                             ^
+: SELECT  "subjects".* FROM "subjects" WHERE "subjects"."name" = $1 AND "subjects"."subject_id" = 1 LIMIT 1):
+  app/controllers/numbers_controller.rb:20:in `create'
+
+
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.5ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (12.5ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.7ms)
+
+
+Started POST "/subjects/1/numbers" for 127.0.0.1 at 2020-04-23 23:56:19 -0400
+Processing by NumbersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZMVMMUuG9IZ8H/XVmbriqHvzdPpUmCNMzQSDw5+qVPtYapjiH1pS+Wv456gQGiLdEtuaaLo8U/DhRljsJahC+w==", "name"=>"4118", "commit"=>"Submit", "subject_id"=>"1"}
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."name" = $1 AND "numbers"."subject_id" = $2 LIMIT 1[0m  [["name", "4118"], ["subject_id", 1]]
+Redirected to https://localhost:3000/subjects/1/numbers/1
+Completed 302 Found in 13ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/subjects/1/numbers/1" for 127.0.0.1 at 2020-04-23 23:56:19 -0400
+Processing by NumbersController#show as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.1ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."number_id" = $1[0m  [["number_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.2ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."number_id" = $1[0m  [["number_id", 1]]
+  Rendered numbers/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 51ms (Views: 35.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/subjects/1/numbers" for 127.0.0.1 at 2020-04-23 23:56:29 -0400
+Processing by NumbersController#index as HTML
+  Parameters: {"subject_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT "numbers".* FROM "numbers" WHERE "numbers"."subject_id" = $1  [["subject_id", 1]]
+  Rendered numbers/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-23 23:56:31 -0400
+Processing by WelcomeController#show as HTML
+  Parameters: {"authenticity_token"=>"kmSlA1GHl7/E5ZwiuX6w1BvBPDOufuy4mF6lnPR0nwSuy3HQBVsxwNMCjl8w3nChcunSoUDanAS0HH6zTnaJBA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.1ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.1ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-23 23:56:32 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.1ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.1ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-23 23:56:34 -0400
+Processing by WelcomeController#show as HTML
+  Parameters: {"authenticity_token"=>"gbpVLNjeb7LEtBlb6YCxg4rl78EJlBJy8WSCUkDYjwG9FYH/jALJzdNTCyZgIHH2480BU+cwYs7dJll9+tqZAQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.3ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.1ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2020-04-23 23:56:35 -0400
+Processing by SubjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT "subjects".* FROM "subjects"[0m
+  Rendered subjects/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/subjects/1/numbers" for 127.0.0.1 at 2020-04-23 23:56:36 -0400
+Processing by NumbersController#index as HTML
+  Parameters: {"subject_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT "numbers".* FROM "numbers" WHERE "numbers"."subject_id" = $1  [["subject_id", 1]]
+  Rendered numbers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/subjects/1/numbers/1" for 127.0.0.1 at 2020-04-23 23:56:39 -0400
+Processing by NumbersController#show as HTML
+  Parameters: {"subject_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.1ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.1ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.2ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."number_id" = $1  [["number_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.1ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."number_id" = $1  [["number_id", 1]]
+  Rendered numbers/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.6ms)
