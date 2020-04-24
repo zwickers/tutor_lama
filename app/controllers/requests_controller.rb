@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   def create
+    puts('****')
     @request = Request.create(text: params[:text], title: params[:title], contact: params[:contact],
                               number_id: params[:number_id], requester_id: params[:requester_id],
                               receiver_id: params[:receiver_id])
