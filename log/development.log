@@ -14696,3 +14696,867 @@ Processing by NumbersController#show as HTML
   [1m[35mTuteeSearch Load (0.1ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."number_id" = $1  [["number_id", 1]]
   Rendered numbers/show.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:13:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (23.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (18.7ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (16.9ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.6ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 1890ms (Views: 1774.9ms | ActiveRecord: 76.5ms)
+
+
+Started GET "/assets/application.self-563fcf10e4b14c910044671cce9c7f862bf93c86ad49475266da7306aa0ccbfd.css?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/subjects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/tooltip.self-da84eea6b9a3587df747ab45bdc51ab5a5d0992544085ea675769824a349270c.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/jquery3.self-e200ee796ef24add7054280d843a80de75392557bb4248241e870fac0914c0c1.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/numbers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/popper.self-55bd1408b0e4ff3edf21524b78fbe2266615c8015ce0e5f0828089b1de27d63c.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/button.self-2ff3013d73651d06fe4d9d77f5f19a85c2d703518de59fa0cc98abc0cd2c53cc.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/toast.self-7a6f8c5f1cd1aa8a2a5dee63a4c5571cb4e3db9cebe8948b9bdee19c6a5331eb.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/util.self-f10a2d4eac0ee99fa400f029db49af1fd010c576cac4e650b85d1202d2c4f424.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-5a65c217abd0ec02ab6153a25f079f7c39ffdae8854c8645ece90a9ba271d179.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-a223ac0d7dfbd7366f542e625b31c27661ba469855c9280510dda88fd855dab7.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-e7fbc6a07cca14de58e464cb5c7d1578c1836271c3996133399b49c6a70de0de.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-1c01706b4b1c4707227c7f728c941f117b0ee282a8ee7b9a9cc3df60d8f99e44.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-ad595ee862ecb2733888865b4195b18f0f24b879eb929c5e2ff5485834402913.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-b068ebef629c548014781670d908df59766351efaaaad98f515d20e2407fc9e0.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-00099e4b1b00919455049c43f1e486532228d7908a6898503351f1c824b2412c.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-be7def30193c37dfea593846cb69379e6136046e98137891c7df475375c1937a.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-a305b7455fdf72315b2d90715e9304efa43d0f68be07ccfce594f38a6cde7610.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/assets/application.self-9b0d291d771da91426b2ab842ab0a5dacf065486322ff8cad8103c19b3cc5c43.js?body=1" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/ssl.rb:24:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.7.2) lib/thin/connection.rb:53:in `process'
+  thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+  eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+  thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.7.2) lib/thin/server.rb:162:in `start'
+  thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+  thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+  thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+  thin (1.7.2) bin/thin:6:in `<top (required)>'
+  /Users/kevinqian/.rbenv/versions/2.6.3/bin/thin:23:in `load'
+  /Users/kevinqian/.rbenv/versions/2.6.3/bin/thin:23:in `<main>'
+
+
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.0ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (48.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (25.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (47.8ms)
+
+
+Started GET "/apple-touch-icon.png" for 127.0.0.1 at 2020-04-28 02:13:18 -0400
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/ssl.rb:24:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.7.2) lib/thin/connection.rb:53:in `process'
+  thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+  eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+  thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.7.2) lib/thin/server.rb:162:in `start'
+  thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+  thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+  thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+  thin (1.7.2) bin/thin:6:in `<top (required)>'
+  /Users/kevinqian/.rbenv/versions/2.6.3/bin/thin:23:in `load'
+  /Users/kevinqian/.rbenv/versions/2.6.3/bin/thin:23:in `<main>'
+
+
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.6ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.0ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/kevinqian/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.6ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:13:19 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (1.2ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 83ms (Views: 72.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:14:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.5ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.5ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 741ms (Views: 698.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:14:06 -0400
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.2ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/tooltip.self-d4bed3c416517db9f48a505a8e9f4cd5c8f22b30050b6f7513788baf5340b8cf.js?body=1" for 127.0.0.1 at 2020-04-28 02:14:06 -0400
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:14:07 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 83ms (Views: 76.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:16:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.5ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.5ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 679ms (Views: 634.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:16:43 -0400
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-a7f3f51af75dff38f3f5af6afaa674fb7e0d428ac2d610c0526b3a7978355484.js?body=1" for 127.0.0.1 at 2020-04-28 02:16:43 -0400
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:16:44 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTutorSearch Load (0.5ms)[0m  SELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.4ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 89ms (Views: 77.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:17:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.6ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.5ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 542ms (Views: 497.3ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:17:05 -0400
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.2ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 65ms (Views: 61.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:17:06 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTutorSearch Load (0.3ms)[0m  SELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 76ms (Views: 70.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:19:41 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.3ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.4ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 219ms (Views: 216.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/tooltip.self-f0fd14203f8a882bd4de656741e42e5ee825ca8b26d46384441b923e558cf3ce.js?body=1" for 127.0.0.1 at 2020-04-28 02:19:41 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:23:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  Parameters: {"authenticity_token"=>"+2w8sAFd/SjWXnlTEzYYGTXJ4+kelYCFTUn+6PXkWDjHw+hjVYFbV8G5ay6althsXOENe/Ax8DlhCyXHT+ZOOA=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.5ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.4ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.4ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 766ms (Views: 721.8ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/tooltip.self-2d8631ef5682fdef1dc151898c26d9406acf4847a7dc0468334ba288cb8f175c.js?body=1" for 127.0.0.1 at 2020-04-28 02:23:15 -0400
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:23:16 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (4.8ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 91ms (Views: 65.9ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/tutee_searches/1" for 127.0.0.1 at 2020-04-28 02:23:22 -0400
+Processing by TuteeSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (6.5ms)[0m  [1mSELECT  "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tutee_search_id" = $1  [["tutee_search_id", 1]]
+  Rendered tutee_searches/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 48ms (Views: 38.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:24:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTutorSearch Load (0.4ms)[0m  SELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.4ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (1.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (560.8ms)
+Completed 200 OK in 799ms (Views: 740.0ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/tooltip.self-5f12c03fba5070a6e7d4ddefaf935804febefe23832803c50221ae6f40a26256.js?body=1" for 127.0.0.1 at 2020-04-28 02:24:56 -0400
+
+
+Started GET "/tutee_searches/1" for 127.0.0.1 at 2020-04-28 02:25:01 -0400
+Processing by TuteeSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (1.1ms)[0m  SELECT  "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.5ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutee_search_id" = $1[0m  [["tutee_search_id", 1]]
+  Rendered tutee_searches/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 94ms (Views: 64.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:28:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.6ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.5ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 668ms (Views: 623.5ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:28:19 -0400
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (1.3ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/me" for 127.0.0.1 at 2020-04-28 02:28:22 -0400
+Processing by UsersController#show_personal_profile as HTML
+  Parameters: {"authenticity_token"=>"AWsQA9nC1uOsARqVnWlGlA4c7TrahA93WM4zM9v5Lhw9xMTQjR5wnLvmCOgUyYbhZzQDqDQgf8t0jOgcYfs4HA=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (17.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNumber Load (0.4ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (5.4ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRequest Load (2.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."requester_id" = $1[0m  [["requester_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."receiver_id" = $1  [["receiver_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show_personal_profile.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 107ms (Views: 52.3ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:28:24 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.3ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/requests" for 127.0.0.1 at 2020-04-28 02:28:29 -0400
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WGtilZWpfOVVJNzKt4uZB+DzsVasH5Mpbvum7gwAeMdkxLZGwXXamkLDzrc+K1lyidtfxEK745VCuX3BtgJuxw==", "title"=>"123", "text"=>"123", "contact"=>"123", "number_id"=>"1", "requester_id"=>"1", "receiver_id"=>"1", "tutor_search_id"=>"1", "commit"=>"Send bid..."}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (25.7ms)[0m  [1mINSERT INTO "requests" ("text", "title", "contact", "number_id", "requester_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["text", "123"], ["title", "123"], ["contact", "123"], ["number_id", 1], ["requester_id", 1], ["receiver_id", 1], ["created_at", "2020-04-28 06:28:29.031385"], ["updated_at", "2020-04-28 06:28:29.031385"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  UPDATE "requests" SET "tutor_search_id" = $1, "updated_at" = $2 WHERE "requests"."id" = $3  [["tutor_search_id", 1], ["updated_at", "2020-04-28 06:28:29.061102"], ["id", 4]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to https://localhost:3000/requests/4
+Completed 302 Found in 38ms (ActiveRecord: 29.6ms)
+
+
+Started GET "/requests/4" for 127.0.0.1 at 2020-04-28 02:28:29 -0400
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mRequest Load (0.2ms)[0m  SELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.4ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered requests/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2020-04-28 02:28:31 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BmHUUCpxQ+mxMkVCkBpE7+Np83PrkhrI5vVHbu9bWy46zgCDfq3llqbVVz8ZuoSaikEd4QU2anTKt5xBVVlNLg=="}
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:28:32 -0400
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-04-28 02:28:33 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:30:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 524ms (Views: 512.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2020-04-28 02:30:26 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQAChW9uAcQpgYhXNHRrwKrIMDjjsZCw4tF3Jxm6rLTKmU40AQMJczjtKEfn54UCfIQoQYhw6zQ57nuccySyLJxuSUec9z2_qXp55vBNBlOVgU_ssu6JqMKlQu7KQxRpESpN2T3SnDG0_GHR70aiI_mDm2-9OPUtOMLaZYRAvEMZfmbn-tQCCQsJ19OwhP-i8WVH9jDyE5GeNRlwEW4YYy83CIAL6LSr6BhAjADCwtU3r2We0qS4ksV5SZZN27YAyZLTIH0A7warqishnw9AEwlL35ZTJdd1BFDJQZpfTCpp1BTgXDlgPEBSYDr6mNiuwL7_dBaKH3-nBo4gBhQuoKXY&state=81b002e14a74909657f5ad0c918c5225bd4c5e54f0ade8a3" for 127.0.0.1 at 2020-04-28 02:30:33 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAChW9uAcQpgYhXNHRrwKrIMDjjsZCw4tF3Jxm6rLTKmU40AQMJczjtKEfn54UCfIQoQYhw6zQ57nuccySyLJxuSUec9z2_qXp55vBNBlOVgU_ssu6JqMKlQu7KQxRpESpN2T3SnDG0_GHR70aiI_mDm2-9OPUtOMLaZYRAvEMZfmbn-tQCCQsJ19OwhP-i8WVH9jDyE5GeNRlwEW4YYy83CIAL6LSr6BhAjADCwtU3r2We0qS4ksV5SZZN27YAyZLTIH0A7warqishnw9AEwlL35ZTJdd1BFDJQZpfTCpp1BTgXDlgPEBSYDr6mNiuwL7_dBaKH3-nBo4gBhQuoKXY", "state"=>"81b002e14a74909657f5ad0c918c5225bd4c5e54f0ade8a3", "provider"=>"facebook"}
+  [1m[35mUser Load (11.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "123777082571266"]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:30:33 -0400
+Processing by WelcomeController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTutorSearch Load (0.5ms)[0m  SELECT "tutor_searches".* FROM "tutor_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.5ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.4ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 91ms (Views: 71.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:33:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.6ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.4ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 524ms (Views: 471.9ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/tutee_searches/1" for 127.0.0.1 at 2020-04-28 02:33:04 -0400
+Processing by TuteeSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT  "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutee_search_id" = $1[0m  [["tutee_search_id", 1]]
+  Rendered tutee_searches/show.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 105ms (Views: 96.0ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/requests" for 127.0.0.1 at 2020-04-28 02:33:09 -0400
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"reHkTAP5YpuEI/lHLWTMuksNX13fS5tEhl2gTfeIfieRTjCfVyXE5JPE6zqkxAzPIiWxzzHv6/iqH3tiTYpoJw==", "title"=>"123", "text"=>"123", "contact"=>"123123", "number_id"=>"2", "requester_id"=>"1", "receiver_id"=>"1", "tutee_search_id"=>"1", "commit"=>"Send bid..."}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "requests" ("text", "title", "contact", "number_id", "requester_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["text", "123"], ["title", "123"], ["contact", "123123"], ["number_id", 2], ["requester_id", 1], ["receiver_id", 1], ["created_at", "2020-04-28 06:33:09.308494"], ["updated_at", "2020-04-28 06:33:09.308494"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.6ms)[0m  UPDATE "requests" SET "tutee_search_id" = $1, "updated_at" = $2 WHERE "requests"."id" = $3  [["tutee_search_id", 1], ["updated_at", "2020-04-28 06:33:09.317511"], ["id", 5]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+Redirected to https://localhost:3000/requests/5
+Completed 302 Found in 56ms (ActiveRecord: 26.0ms)
+
+
+Started GET "/requests/5" for 127.0.0.1 at 2020-04-28 02:33:09 -0400
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mRequest Load (0.2ms)[0m  SELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.3ms)[0m  [1mSELECT  "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered requests/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/me" for 127.0.0.1 at 2020-04-28 02:33:12 -0400
+Processing by UsersController#show_personal_profile as HTML
+  Parameters: {"authenticity_token"=>"l90zdAA6mMEVYmpwooU/jng4Qo1u6zAqIBGalf7HM8urcuenVOY+vgKFeA0rJf/7ERCsH4BPQJYMU0G6RMUlyw=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNumber Load (0.2ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.2ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."requester_id" = $1[0m  [["requester_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."receiver_id" = $1  [["receiver_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show_personal_profile.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/me" for 127.0.0.1 at 2020-04-28 02:34:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show_personal_profile as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.5ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNumber Load (0.4ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTuteeSearch Load (0.5ms)[0m  SELECT "tutee_searches".* FROM "tutee_searches" WHERE "tutee_searches"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRequest Load (0.7ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."requester_id" = $1[0m  [["requester_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."receiver_id" = $1  [["receiver_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show_personal_profile.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 2140ms (Views: 2056.9ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/assets/application.self-3d76adec00266332aee3001ad811927b9a65051a60ddf312f709d580b7077c09.js?body=1" for 127.0.0.1 at 2020-04-28 02:34:19 -0400
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:34:22 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.3ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.4ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 91ms (Views: 80.6ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/requests" for 127.0.0.1 at 2020-04-28 02:34:27 -0400
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jX5WvuOvp81/z5bhUkXeJBv3AFDVzkGLYm3uSg3C/HSx0YJtt3MBsmgohJzb5R5Rct/uwjtqMTdOLzVlt8DqdA==", "title"=>"111", "text"=>"222", "contact"=>"333", "number_id"=>"1", "requester_id"=>"1", "receiver_id"=>"1", "tutor_search_id"=>"1", "commit"=>"Send bid..."}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "requests" ("text", "title", "contact", "number_id", "requester_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["text", "222"], ["title", "111"], ["contact", "333"], ["number_id", 1], ["requester_id", 1], ["receiver_id", 1], ["created_at", "2020-04-28 06:34:27.983795"], ["updated_at", "2020-04-28 06:34:27.983795"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "requests" SET "tutor_search_id" = $1, "updated_at" = $2 WHERE "requests"."id" = $3  [["tutor_search_id", 1], ["updated_at", "2020-04-28 06:34:27.992970"], ["id", 6]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Redirected to https://localhost:3000/requests/6
+Completed 302 Found in 23ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/requests/6" for 127.0.0.1 at 2020-04-28 02:34:28 -0400
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mRequest Load (0.2ms)[0m  SELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered requests/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:34:29 -0400
+Processing by WelcomeController#show as HTML
+  Parameters: {"authenticity_token"=>"jbT+LbxJXd7R1fQswmdc6px8un37Z6sNfoj11feSWvGxGyr+6JX7ocYy5lFLx5yf9VRU7xXD27FSyi76TZBM8Q=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.3ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.2ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:34:30 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.2ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.3ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-28 02:35:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#show as HTML
+  Parameters: {"authenticity_token"=>"UUFlKJAuO0Lcb0n3cJqqh6iLkS6w6RuOEWE94D8W1aFt7rH7xPKdPcuIW4r5OmrywaN/vF5NazI9I+bPhRTDoQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.6ms)[0m  [1mSELECT "tutor_searches".* FROM "tutor_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.3ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.3ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTuteeSearch Load (0.7ms)[0m  [1mSELECT "tutee_searches".* FROM "tutee_searches"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mNumber Load (0.2ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/show.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 743ms (Views: 698.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/tutor_searches/1" for 127.0.0.1 at 2020-04-28 02:35:26 -0400
+Processing by TutorSearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorSearch Load (0.3ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mNumber Load (0.3ms)[0m  SELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tutor_search_id" = $1[0m  [["tutor_search_id", 1]]
+  Rendered tutor_searches/show.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 79ms (Views: 70.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/requests" for 127.0.0.1 at 2020-04-28 02:35:31 -0400
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"adKg5hAET1kWd+5gLyPC2e9OYSJfbxi3RO2cq3DSycBVfXQ1RNjpJgGQ/B2mgwKshmaPsLHLaAtor0eEytDfwA==", "title"=>"123", "text"=>"123", "contact"=>"123", "number_id"=>"1", "requester_id"=>"1", "receiver_id"=>"1", "tutor_search_id"=>"1", "commit"=>"Send bid..."}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (12.3ms)[0m  [1mINSERT INTO "requests" ("text", "title", "contact", "number_id", "requester_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["text", "123"], ["title", "123"], ["contact", "123"], ["number_id", 1], ["requester_id", 1], ["receiver_id", 1], ["created_at", "2020-04-28 06:35:31.989767"], ["updated_at", "2020-04-28 06:35:31.989767"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "requests" SET "tutor_search_id" = $1, "updated_at" = $2 WHERE "requests"."id" = $3  [["tutor_search_id", 1], ["updated_at", "2020-04-28 06:35:32.010392"], ["id", 7]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Redirected to https://localhost:3000/requests/7
+Completed 302 Found in 45ms (ActiveRecord: 26.3ms)
+
+
+Started GET "/requests/7" for 127.0.0.1 at 2020-04-28 02:35:32 -0400
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mRequest Load (0.2ms)[0m  SELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mNumber Load (0.4ms)[0m  [1mSELECT  "numbers".* FROM "numbers" WHERE "numbers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubject Load (0.2ms)[0m  SELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTutorSearch Load (0.3ms)[0m  [1mSELECT  "tutor_searches".* FROM "tutor_searches" WHERE "tutor_searches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered requests/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 1.4ms)
