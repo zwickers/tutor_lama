@@ -1,8 +1,11 @@
 # Tutor Lama 🦙
 
 Tutor Lama is a web app for connecting tutors with students who go to the same university.
-Justin Zwich - jaz2130
+
+Justin Zwick - jaz2130
+
 Kevin Qian - xq2194
+
 Phivian Phun - pp2680
 
 ## Installation and Setup
